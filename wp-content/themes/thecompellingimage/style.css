@@ -1,0 +1,24 @@
+/*
+Theme Name: The Compelling Image
+Theme URI: http://www.code5fixer.com/
+Author: Code5Fixer
+Author URI: http://www.code5fixer.com/
+Description: Wordpress, Joomla, Magento, PHP, HTML, CSS... Developer.
+Version: 1.1
+*/
+
+/* Styles, images ... are in source folder */
+
+.woocommerce-pagination ul{
+list-style: none;text-align: center;width:35%;
+margin:0px auto;}
+.woocommerce-pagination ul li{display: inline;
+width: auto;
+float: left;
+background: #ddd;
+color: #333;
+text-align: center;
+font-size: 16px;
+border: 1px solid #efefef;border-radius: 2px;
+padding: 5px 20px;
+margin-right: 10px}
