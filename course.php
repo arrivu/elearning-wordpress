@@ -46,7 +46,10 @@ class Course extends Canvas{
   	$data = json_encode(array("enrollment" => array( "user_id" => $user_id, "type" => $type, "enrollment_state" => $enrollment_state, "notify" => $notify)));
   	return $this->post_json("/courses/".$course_id."/enrollments",$data);
 	} 
-
+  public function enroll_teacher($course_id,$user_id, $type = "TeacherEnrollment", $enrollment_state = "active",  $notify = 0){
+    $data = json_encode(array("enrollment" => array( "user_id" => $user_id, "type" => $type, "enrollment_state" => $enrollment_state, "notify" => $notify)));
+    return $this->post_json("/courses/".$course_id."/enrollments",$data);
+  } 
 	public function conclude_enrollment($course_id,$user_id){
   	return $this->delete_json("/courses/".$course_id."/enrollments/".$user_id."?task=conclude");
 	}

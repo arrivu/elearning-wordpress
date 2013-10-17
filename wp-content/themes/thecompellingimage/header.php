@@ -15,24 +15,6 @@
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <link href='https://fonts.googleapis.com/css?family=Viga' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Noticia+Text' rel='stylesheet' type='text/css'>
-<script type="text/javascript">
-function logout_lms()
-
-{ myWindow =window.open('https://beta.thecompellingimage.com/wp-login.php?action=logout',"_blank")
-
- $.ajax({
-  url: 'https://lms.thecompellingimage.com/logout',
-      type: "GET",
-      crossDomain: true,
-      async:false,
-    success: function(){
-myWindow.close();
- }
-   });
-
-
-}
-</script>
 <?php wp_head(); ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
@@ -98,6 +80,32 @@ $jQColor(document).ready(function(){
 	$jQColor(".popupvideo").colorbox({iframe:true, innerWidth:300, innerHeight:170});
 });
 </script>
+<script type="text/javascript">
+function logout_lms()
+
+{ 
+
+mywindow= window.open('https://lms.thecompellingimage.com/logout','_blank');
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+
+
+xmlhttp.open("GET","https://beta.thecompellingimage.com/wp-login.php?action=logout",false);
+xmlhttp.send();
+mywindow.close();
+window.location.href="https://beta.thecompellingimage.com/";
+
+}
+</script>
+
 </head>
 <body>
 <div class="wrapper">
@@ -124,8 +132,7 @@ $jQColor(document).ready(function(){
       		<li><a href="<?php echo $direct;?>/my-account/" class="font_tahoma">My Courses</a></li>
       		<li><a href="<?php echo $direct;?>/edit-profile/" class="font_tahoma">Edit Profile</a></li>
       		<?php } ?>
-      		<?php /*?><li><a href="#" onclick= "logout_lms()">Logout</a></li><?php */?>
-      		<li><a href="<?php echo wp_logout_url(); ?>" >Logout</a></li>
+      		<li><a href="#" onclick= "logout_lms()">Logout</a></li>
       	<?php	
       	}	
       	else

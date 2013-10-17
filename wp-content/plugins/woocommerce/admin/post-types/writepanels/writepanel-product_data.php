@@ -96,7 +96,10 @@ function woocommerce_product_data_box() {
 		</ul>
 		<div id="general_product_data" class="panel woocommerce_options_panel">
 <p class="form-field _regular_price_field "><label for="_regular_price">Instructor</label>
-	<?php /*?>
+	<?php 
+global $wpdb;
+
+	/*?>
 					<?php //echo "hiiiiiii".$product_type;
 		$cat_id = 13; // The category id to Photography
   $sql = "SELECT p.*,t.* FROM $wpdb->posts p
@@ -163,20 +166,42 @@ $type_box1  = '<label for="product-type"><select id="instructor-type" name="inst
 		?>
 	<?php */ ?>
 	<?php 
+if($_REQUEST['action']=="edit")
+{
+$get_instructorid="select instructor_type from wp_posts where ID=".$_REQUEST['post'];
+		$instructorvalue=$wpdb->get_row($get_instructorid);
+		$instructoredit= $instructorvalue->instructor_type;
+}	
+if($instructoredit)
+{
+	$instructorid=$instructoredit;
+}	
+else
+{
+	$instructorid="";
+}
+
 	$user_query = new WP_User_Query( array( 'role' => 'Author' ) );
 	$users = $user_query->get_results();
-	//print_r($user_query);
+	
 	$type_box1  = '<label><select id="instructor-type" name="instructor_type">';
 		$type_box1 .='<option value=""></option>';	
 		foreach ( $users as $value ){
-		//if($value->ID)
-				
-		$type_box1 .= '<option value="' . esc_attr( $value->ID ) . '" ' . selected( $instructor_type, $value->ID, false ) .'>' . esc_html( $value->display_name ) . '</option>';
+		
+		if($value->ID==$instructorid)
+		{
+			$checkid='selected="selected"';
+		}
+		else
+		{
+			$checkid="";
+		}		
+		$type_box1 .= '<option value="' . esc_attr( $value->ID ) . '" ' . $checkid .'>' . esc_html( $value->display_name ) . '</option>';
 		
 		}
 		echo $type_box1."</select></label>";
-		echo esc_attr( get_post_meta( $thepostid, '_sku', true ) );
-		echo "hiii".$instructor_type;
+		echo esc_attr( get_post_meta( $thepostid, '_instructor_type', true ) );
+		echo $instructor_type;
 	?>
 </p>
 <p class="form-field _regular_price_field "><label for="_regular_price">Duration</label>
@@ -193,12 +218,34 @@ $duration = array(
     "36" => "3 Years"
 );
 
+if($_REQUEST['action']=="edit")
+{
+$get_dutrationid="select duration from wp_posts where ID=".$_REQUEST['post'];
+		$durationvalue=$wpdb->get_row($get_dutrationid);
+		$durationedit= $durationvalue->duration;
+}	
+if($durationedit)
+{
+	$durationid=$durationedit;
+}	
+else
+{
+	$durationid="";
+}
 	?>
 	<select name="duration">
 		<option value="">Choose Duration</option>
 	<?php 
 	foreach ( $duration as $value => $label ){
-		$type_duration = '<option value="' . esc_attr( $value ) . '" ' . selected( $product_type, $value, false ) .'>' . esc_html( $label ) . '</option>';
+		if($value==$durationid)
+		{
+			$check='selected="selected"';
+		}
+		else
+		{
+			$check="";
+		}
+		$type_duration = '<option value="' . esc_attr( $value ) . '" ' . $check .'>' . esc_html( $label ) . '</option>';
 		echo $type_duration;
 	}	
 	?>	

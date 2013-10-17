@@ -41,7 +41,20 @@ if ( $post ) {
  * @param int $post_id Optional. Post ID.
  */
 function redirect_post($post_id = '') {
+	global $wpdb;
 	if ( isset($_POST['save']) || isset($_POST['publish']) ) {
+		if($_POST['duration'])
+		{
+			$duration=$_POST['duration'];
+			$qry='update wp_posts set duration='.$duration.' where ID='.$post_id;
+			$wpdb->query($qry);
+		}
+		if($_POST['instructor_type'])
+		{
+			$instructor=$_POST['instructor_type'];
+			$qry='update wp_posts set instructor_type='.$instructor.' where ID='.$post_id;
+			$wpdb->query($qry);
+		}
 		$status = get_post_status( $post_id );
 
 		if ( isset( $_POST['publish'] ) ) {
@@ -100,6 +113,29 @@ function redirect_post($post_id = '') {
 	//echo "----------".$getlms->lms_id;
 	if($_POST['original_publish']=="Update" && $_POST['post_type']=="product")
 	{	
+		if($_POST['duration'])
+		{
+			$duration=$_POST['duration'];
+			$qry='update wp_posts set duration='.$duration.' where ID='.$post_id;
+			$wpdb->query($qry);
+		}
+		else
+		{
+			$qry='update wp_posts set duration="" where ID='.$post_id;
+			$wpdb->query($qry);
+
+		}
+		if($_POST['instructor_type'])
+		{
+			$instructor=$_POST['instructor_type'];
+			$qry='update wp_posts set instructor_type='.$instructor.' where ID='.$post_id;
+			$wpdb->query($qry);
+		}
+		else
+		{
+			$qry='update wp_posts set instructor_type="" where ID='.$post_id;
+			$wpdb->query($qry);
+		}
 		$courses=$course->update_course($getlms->lms_id,$_POST['post_title'],$_POST['content']);
 	}
 	

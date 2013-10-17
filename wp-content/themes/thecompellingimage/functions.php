@@ -227,7 +227,6 @@ register_sidebar(array('name'=>'Testimonials',));
 $pagelinks .= "</div>";
 return $pagelinks;
 }
-/*
 add_action( 'woocommerce_thankyou', 'custom_woocommerce_auto_complete_order' );
 function custom_woocommerce_auto_complete_order( $order_id ) {
     global $woocommerce;
@@ -257,7 +256,7 @@ $courses=$course->enroll_user($getlms->lms_id,$get_userlms->user_lms);
 
 
 }
-*/
+
 function change_role_name() {
     global $wp_roles;
 
