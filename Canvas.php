@@ -82,23 +82,17 @@ class Canvas{
         return $response;
 	}
 	public function cas_logout(){
-		
 		$handle = curl_init();
-		$headers = array('cookies '.$_COOKIE["tgt"]);
-		echo $_COOKIE["tgt"];
+		$headers = array('cookie: tgt='.$_COOKIE["tgt"]);
 		curl_setopt($handle, CURLOPT_URL, "https://cas.thecompellingimage.com/cas/api-logout");
-		curl_setopt($handle, CURLOPT_HTTPHEADER, $headers);
-		//curl_setopt($handle, CURLOPT_COOKIE, "tgt=".$_COOKIE["tgt"]);
+	//curl_setopt($handle, CURLOPT_HTTPHEADER, $headers);
+		curl_setopt($handle, CURLOPT_COOKIE, "tgt=".$_COOKIE["tgt"]);
 		curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($handle, CURLOPT_CUSTOMREQUEST, 'DELETE');
 		curl_setopt($handle, CURLOPT_SSL_VERIFYHOST, 0);
 		curl_setopt($handle, CURLOPT_SSL_VERIFYPEER, 0);
         $response = json_decode(curl_exec($handle),TRUE);
-        //echo $_COOKIE["tgt"];
-        print_r($response);
-       // exit();
         curl_close($handle);
-        //return $response;
 	}
 
 }
