@@ -354,7 +354,7 @@ if ( is_multisite() && is_network_admin() && ! IS_PROFILE_PAGE && current_user_c
 	<?php endif; ?>
 	</td>
 </tr>
-<?php /*?>
+
 <tr>
 	<th><label for="url"><?php _e('Website') ?></label></th>
 	<td><input type="text" name="url" id="url" value="<?php echo esc_attr($profileuser->user_url) ?>" class="regular-text code" /></td>
@@ -370,7 +370,7 @@ if ( is_multisite() && is_network_admin() && ! IS_PROFILE_PAGE && current_user_c
 <?php
 	}
 ?>
-<?php */ ?>
+
 </table>
 <?php /* ?>
 <h3><?php IS_PROFILE_PAGE ? _e('About Yourself') : _e('About the user'); ?></h3>

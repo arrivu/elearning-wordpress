@@ -10,7 +10,7 @@
 	height: 0;
 }
  
-.clearfix {
+ .clearfix {
 	display: inline-block;
 }
  
@@ -46,6 +46,8 @@ body,ul{
 }
 a{
 	cursor:pointer;
+	font-size:13px;
+	color:#cccccc;
 }
 .fl{
 	float:left;
@@ -198,6 +200,7 @@ ul.menu li{
 	float:left;
 	list-style:none;
 }
+
 ul.menu li a{
 	text-decoration:none;
 	display:inline-block;
@@ -257,7 +260,7 @@ ul.menu li a:hover, ul.menu li a.sel{
 .content_row{
 	width:100%;
 	background:#000;
-	height:408px;
+	height:352px;
 }
 .row1{
 	width:985px;
@@ -1050,6 +1053,7 @@ p.about_compelling{
 	width:800px;
 	margin: -19px 0 0 0;
 }
+
 .list_course .inner li{
 	list-style:square;
 }
@@ -1202,13 +1206,11 @@ h1.heading_grey{
 	margin:15px 0 10px 12px;
 }
 .course_select{
-	width:515px;
-	float:left;
-	margin: -13px 0 0 70px;
-	
-	height:155px;
-	background:url(../images/bg_slider.png) no-repeat 99% 0;
-}
+	width: 385px;
+	float: left;
+	padding-left: 65px;
+	height: 155px;
+	background: url(../images/bg_slider.png) no-repeat 99% 0;}
 .course_select .grey14{
 	padding: 5px 25px;
 }
@@ -1409,7 +1411,7 @@ a.usepromo{
 	padding:0 5px;
 	background:#cccccc;
 		border:1px solid #ffffff;
-		width:402px;
+		width:430px;
 		height:40px;
 		display:inline-block;
 		text-decoration:none;

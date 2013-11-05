@@ -137,9 +137,13 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 		</tbody>
 	</table>
 <?php */ ?>
+
+
+
+
 	<div id="payment">
 		
-		<div class="form-row place-order">
+		<div class="form place-order">
 
 			<noscript><?php _e( 'Since your browser does not support JavaScript, or it is disabled, please ensure you click the <em>Update Totals</em> button before placing your order. You may be charged more than the amount stated above if you fail to do so.', 'woocommerce' ); ?><br/><input type="submit" class="button alt" name="woocommerce_checkout_update_totals" value="<?php _e( 'Update totals', 'woocommerce' ); ?>" /></noscript>
 
@@ -158,7 +162,7 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 
 <li>
 <div class="card_info">
- <SELECT NAME="CCExpiresMonth" style="float:left !important;width:150px !important;" >
+ <SELECT NAME="CCExpiresMonth" class="credithalf combogrey	" style="float:left !important;width:150px !important;height:40px !important;margin: 0px 10px 0px 0px;" >
         <OPTION VALUE="" SELECTED>Month
         <OPTION VALUE="01">January (01)
         <OPTION VALUE="02">February (02)
@@ -173,7 +177,7 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
         <OPTION VALUE="11">November (11)
         <OPTION VALUE="12">December (12)
       </SELECT> 
- <SELECT NAME="CCExpiresYear" style="float:left !important;width:150px !important;">
+ <SELECT NAME="CCExpiresYear" class="credithalf combogrey	" style="float:left !important;width:150px !important;height:40px !important;margin: 0px 10px 0px 0px;">
         <OPTION VALUE="" SELECTED>Year
         <OPTION VALUE="04">2004
         <OPTION VALUE="05">2005
@@ -189,7 +193,7 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
         <OPTION VALUE="15">2015
       </SELECT>
 <input type="text" class="credithalf" value="" placeholder="Sce/CVV Code" style="float:left !important;width:110px !important;height:40px !important;"/>
-
+</div>
 </li>
 
 </ul>
@@ -204,7 +208,7 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 </div>
 <div class="clear"></div>
 		
-<p class="form-row terms">
+<p class="form-row terms" style="height:42px;font-size:19px;">
 	<?php
 			$order_button_text = apply_filters('woocommerce_order_button_text', __( 'Place order', 'woocommerce' ));
 

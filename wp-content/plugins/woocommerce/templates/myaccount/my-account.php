@@ -53,16 +53,7 @@ if ( $customer_orders ) : ?>
 	<h2><?php echo apply_filters( 'woocommerce_my_account_my_orders_title', __( 'My Course', 'woocommerce' ) ); ?></h2>
 
 	<?php
-			//echo "hiiiiiiii";
-
-	
-	//print_r($order_ids);
-	
-	//$user_product_bought=fused_has_user_bought(6,$order_userids);
-	//print_r($user_product_bought);
-		//$order = new WC_Order();
-		//print_r($order_userids);
-			//print_r($customer_orders);
+		
 			foreach ( $customer_orders as $customer_order ) {
 				$order = new WC_Order();
 					

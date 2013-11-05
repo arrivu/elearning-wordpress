@@ -17,7 +17,7 @@ $order = new WC_Order( $order_id );
 <table class="shop_table order_details">
 	<thead>
 		<tr>
-			<th class="product-name"><?php _e( 'Product', 'woocommerce' ); ?></th>
+			<th class="product-name"><?php _e( 'Course Name', 'woocommerce' ); ?></th>
 			<th class="product-total"><?php _e( 'Total', 'woocommerce' ); ?></th>
 		</tr>
 	</thead>
@@ -43,9 +43,7 @@ $order = new WC_Order( $order_id );
 
 				echo '
 					<tr class = "' . esc_attr( apply_filters( 'woocommerce_order_table_item_class', 'order_table_item', $item, $order ) ) . '">
-						<td class="product-name">' .
-							apply_filters( 'woocommerce_order_table_product_title', '<a href="' . get_permalink( $item['product_id'] ) . '">' . $item['name'] . '</a>', $item ) . ' ' .
-							apply_filters( 'woocommerce_order_table_item_quantity', '<strong class="product-quantity">&times; ' . $item['qty'] . '</strong>', $item );
+						<td class="product-name">' .$item['name'];
 
 				$item_meta = new WC_Order_Item_Meta( $item['item_meta'] );
 				$item_meta->display();
@@ -69,13 +67,17 @@ $order = new WC_Order( $order_id );
 					echo implode( '<br/>', $links );
 				}
 
-				echo '</td><td class="product-total">' . $order->get_formatted_line_subtotal( $item ) . '</td></tr>';
-
+				echo '</td>';
 				// Show any purchase notes
+				
+				echo '<td class="product-total">' . $order->get_formatted_line_subtotal( $item ) . '</td></tr>';
+				/*
+				
 				if ($order->status=='completed' || $order->status=='processing') {
 					if ($purchase_note = get_post_meta( $_product->id, '_purchase_note', true))
 						echo '<tr class="product-purchase-note"><td colspan="3">' . apply_filters('the_content', $purchase_note) . '</td></tr>';
 				}
+				*/
 
 			}
 		}
@@ -92,7 +94,7 @@ $order = new WC_Order( $order_id );
 <?php endif; ?>
 
 <?php do_action( 'woocommerce_order_details_after_order_table', $order ); ?>
-
+<?php /* ?>
 <header>
 	<h2><?php _e( 'Customer details', 'woocommerce' ); ?></h2>
 </header>
@@ -122,7 +124,7 @@ $order = new WC_Order( $order_id );
 
 <?php if (get_option('woocommerce_ship_to_billing_address_only')=='no') : ?>
 
-	</div><!-- /.col-1 -->
+	</div>
 
 	<div class="col-2">
 
@@ -135,10 +137,10 @@ $order = new WC_Order( $order_id );
 			?>
 		</p></address>
 
-	</div><!-- /.col-2 -->
+	</div>
 
-</div><!-- /.col2-set -->
-
+</div>
 <?php endif; ?>
+<?php */ ?>
 
 <div class="clear"></div>

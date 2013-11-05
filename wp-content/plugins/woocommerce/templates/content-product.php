@@ -71,17 +71,30 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 				 * @hooked woocommerce_template_loop_product_thumbnail - 10
 				 */
 				do_action( 'woocommerce_before_shop_loop_item_title' );
+
+				//print_r($post);
+				$seturl=get_site_url();
+			$instr=get_user_meta($post->instructor_type, 'first_name', true);	
 			?>
-	
+			<?php if($instr): ?>
+			<div style="height: 35px;width: 150px;background: #333333;padding: 0;position: relative;margin: 0 0 10px 0;">
+				<?php echo "Instructor:";?><a style="color:white;font: bold 12px/20px Arial, Helvetica, sans-serif;" href="<?php echo $seturl.'/instructors/?user='.$post->instructor_type;?>">
+				<?php echo get_user_meta($post->instructor_type, 'first_name', true); ?></a>
+			</div>	
+			<?php endif; ?>
 			
 	</div>	
 	<div class="column2">
 	<div class="pdtdes_dis"><div class="show"><?php the_excerpt(); ?></div><a href="javascript:;" class="red_txt_normal td_n">Find out more..</a>
-	<div class="pdtdes_hdn"><div class="cb"></div><?php the_content(); ?><a class="grey_txt_normal" href="javascript:;">Back Scroll Up</a></div>
-	</div>
-	
-	</div>
-	</div>
-	<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
 
+	<div class="pdtdes_hdn"><div class="cb"></div><?php the_content(); ?><a class="grey_txt_normal" href="javascript:;">Scroll Back Up</a></div>
+	
+	
+	
+</div>	
+<div style="right:15%;postion:absolute;margin-top:-20px;">
+		<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
+	</div>
+</div>
+	</div>
 </li>

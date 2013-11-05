@@ -1,3 +1,20 @@
+<script type='text/javascript' src='<?php echo get_site_url(); ?>/jquery.min.js'></script> 
+<script type='text/javascript' src='<?php echo get_site_url(); ?>/jquery-ui.min.js'></script> 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+   <script type="text/javascript">
+   
+$(document).ready(function () {
+		var url = document.referrer;
+ 
+ if (url=="http://wordpress.com/rails/checkout/")
+{
+ 	window.location.reload(); 
+}
+ 
+});
+
+</script>
 <?php
 /**
  * The Template for displaying product archives, including the main shop page which is a post type archive.
@@ -12,6 +29,9 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 get_header('shop'); ?>
+
+
+
 
 	<?php
 		/**
@@ -40,27 +60,12 @@ get_header('shop'); ?>
 		do_action('woocommerce_sidebar');
 		//session_start();
 		 $_SESSION['views']=1;
-		 /*
-		 $args = array(
-    
-    'show_count'         => 0,
-    'use_desc_for_title' => 1,
-    'child_of'           => 0,
-    'title_li'           => __( '' ),
-    'show_option_none'   => __('No Menu Items'),
-    'number'             => null,
-    'echo'               => 1,
-    'depth'              => 2,
-    'taxonomy'           => 'product_cat',
-    
-);
-*/
+		
 		?>
-	 <style>
-      a:active {
-  color:red !important;
-}
-    </style>
+	<style>
+	
+	.selectsubclass{color:red !important;}
+	</style>
 <?php 
 global $woocommerce;
 
@@ -83,45 +88,145 @@ global $woocommerce;
     <?php */
     ?>
 <?php endif; ?>
+<?php /* ?>
+<br/><br/><br/>
+<?php
+$taxonomy = 'product_cat';
+$orderby = 'name';
+$show_count = 0; // 1 for yes, 0 for no
+$pad_counts = 0; // 1 for yes, 0 for no
+$hierarchical = 1; // 1 for yes, 0 for no
+$title = '';
+$empty = 0;
+
+$args = array(
+'taxonomy' => $taxonomy,
+'orderby' => $orderby,
+'show_count' => $show_count,
+'pad_counts' => $pad_counts,
+'hierarchical' => $hierarchical,
+'title_li' => $title,
+'hide_empty' => $empty
+);
+?>
+
+<?php
+$all_categories = get_categories( $args );
+foreach ($all_categories as $cat)
+{
+
+if($cat->category_parent == 0)
+{
+$category_id = $cat->term_id;
+$thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
+$image = wp_get_attachment_url( $thumbnail_id );
+$args2 = array(
+'taxonomy' => $taxonomy,
+'child_of' => 0,
+'parent' => $category_id,
+'orderby' => $orderby,
+'show_count' => $show_count,
+'pad_counts' => $pad_counts,
+'hierarchical' => $hierarchical,
+'title_li' => $title,
+'hide_empty' => $empty
+
+);
+
+$sub_cats = get_categories( $args2 );
+if($sub_cats)
+{
+$cnt=0;
+$count=count($sub_cats);
+$totalcount=$count-1;
+foreach($sub_cats as $sub_category)
+{
+echo '<div style="float:left;padding:5px;font: bold 14px/20px Arial, Helvetica, sans-serif;">';
+if($sub_cats->$sub_category == 0)
+{
+echo '<a href="' . get_term_link( (int) $sub_category->term_id, 'product_cat' ) . '" style="text-decoration:none;color:#999999 !important;">' .$sub_category->name. ' </a>';
+if($cnt<=$totalcount-1)
+		echo "|";
+
+$cnt++;	
+?>
+<?php
+
+$args = array( 'post_type' => 'product','product_cat' => $sub_category->slug);
+$loop = new WP_Query( $args );
+?>
+<?php wp_reset_query(); ?>
+
+<?php
+echo "</div>";
+}
+else
+{
+
+}
+
+}
+}
+
+}
+else
+{
+}
+}
+?>
+<?php */ ?>
 	<?php	
+global $wp_query;
+$cat = $wp_query->get_queried_object();
+$permalink = $_SERVER['REQUEST_URI'];
+
 global $post;
-//echo "hiiiiii".$post->ID;
 global $wpdb;
-$cat_qry='select wpt.*,wptax.* from wp_terms as wpt,wp_term_taxonomy as wptax,wp_term_relationships as rr,wp_posts as ww  where taxonomy="product_cat"  and  wpt.term_id=wptax.term_id and wpt.term_id=rr.term_taxonomy_id and ww.ID=rr.object_id and wptax.parent="0" and rr.object_id='.$post->ID;
-$get_catid=$wpdb->get_row($cat_qry);
-//echo 'select wpt.*,wptax.* from wp_terms as wpt,wp_term_taxonomy as wptax,wp_term_relationships as rr,wp_posts as ww  where taxonomy="product_cat"  and  wpt.term_id=wptax.term_id and   wpt.term_id=rr.term_taxonomy_id and ww.ID=rr.object_id and rr.object_id="225" and wptax.parent="0"';
-$product_cat_id = $get_catid->term_id;
+
+if($cat->parent>0)
+{
+	$product_cat_id=$cat->parent;
+}
+elseif($cat->term_id>0)
+{
+	$product_cat_id=$cat->term_id;
+}
+else
+{
+	$product_cat_id="13";
+}
+/*
 $terms = get_the_terms( $post->ID, 'product_cat' );
 foreach ($terms as $term) {
     $product_cat_idsss = $term->term_id;
     break;
 }
-//echo "hiiiii".$product_cat_id;
-
+*/
 $qry='select wpt.*,wptax.* from wp_terms as wpt,wp_term_taxonomy as wptax where wptax.taxonomy="product_cat"  and  wpt.term_id=wptax.term_id and wptax.parent="'.$product_cat_id.'" order by wpt.name asc';
+
 $ss=$wpdb->get_results($qry);
 //print_r($ss);
 echo '<br/><br/><br/>';
 $cnt=0;
 $count=count($ss);
 $totalcount=$count-1;
-//echo "hiiiii".$count;
-foreach($ss as $cat)
+foreach($ss as $cats)
 {
-	//echo $result->name;
-	echo '<div style="float:left;padding:5px;font: bold 14px/20px Arial, Helvetica, sans-serif;"><a href="' . get_term_link( (int) $cat->term_id, 'product_cat' ) . '" style="text-decoration:none;color:#999999 !important;">' . __( $cat->name, 'woocommerce' ) . ' </a>';
+	echo '<div class="subid" style="float:left;padding:5px;font: bold 14px/20px Arial, Helvetica, sans-serif;"><a id="atag" href="' . get_term_link( (int) $cats->term_id, 'product_cat' ) . '" style="padding:5px;text-decoration:none;color:#999999;" >';
+	if ((strpos($permalink,$cats->slug) !== false) && ($cats->slug="all-courses"))
+	 	echo '<span style="color:#d03423;">';
+	echo  __( $cats->name, 'woocommerce' );
+	if ((strpos($permalink,$cats->slug) !== false) && ($cats->slug="all-courses"))
+	 	echo '</span>';
+	echo '</a>';
 	if($cnt<=$totalcount-1)
-		echo "|";	
+		echo "&nbsp;&nbsp;|";	
 	echo "</div>";
 	$cnt++;
 }
-//echo 'select wpt.*,wptax.* from wp_terms as wpt,wp_term_taxonomy as wptax where taxonomy="product_cat"  and  wpt.term_id=wptax.term_id and wptax.parent=13';
-//$sub_cat=  '<div style="float:left;padding:5px;color:#999999 !important;font: bold 14px/20px Arial, Helvetica, sans-serif;"><a href="' . get_term_link( (int) $cat->term_id, 'product_cat' ) . '" style="text-decoration:none;">' . __( $cat->name, 'woocommerce' ) . ' </a> | </div>';
-		
 ?>
 		<?php
-
-		//wc_origin_trail_ancestor(true);
+		
 		 if ( have_posts() ) : ?>
 
 			<?php

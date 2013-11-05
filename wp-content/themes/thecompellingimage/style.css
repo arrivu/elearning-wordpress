@@ -15,10 +15,26 @@ margin:0px auto;}
 .woocommerce-pagination ul li{display: inline;
 width: auto;
 float: left;
-background: #ddd;
+background: #e72b17;
 color: #333;
 text-align: center;
 font-size: 16px;
 border: 1px solid #efefef;border-radius: 2px;
-padding: 5px 20px;
+padding: 5px 15px;
 margin-right: 10px}
+.woocommerce-pagination ul li a{text-decoration: none;color:#333;}
+.woocommerce-pagination ul li .current{color: #fff;}
+ul .product-categories li .current-cat{background: #e72b17;}
+.menu .current-menu-item > a,
+.menu .current-menu-ancestor > a,
+.menu .current_page_item > a,
+.menu .current_page_ancestor > a {
+	font-weight: bold;
+	background: #e72b17;
+}
+.product-categories .current-cat > a,
+.product-categories .current-cat-parent > a,
+.menu .cat-item .cat-item-13 > a{
+	color: #fff;
+	background: #e72b17;
+}

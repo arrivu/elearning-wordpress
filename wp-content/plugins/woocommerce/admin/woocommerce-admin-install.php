@@ -223,6 +223,8 @@ function woocommerce_create_pages() {
 
     // Thanks page
     woocommerce_create_page( esc_sql( _x( 'order-received', 'page_slug', 'woocommerce' ) ), 'woocommerce_thanks_page_id', __( 'Order Received', 'woocommerce' ), '[woocommerce_thankyou]', woocommerce_get_page_id( 'checkout' ) );
+    
+    //woocommerce_create_page( esc_sql( _x( 'order-received', 'page_slug', 'woocommerce' ) ), 'woocommerce_myaccount_page_id', __( 'Order Received', 'woocommerce' ), '[woocommerce_my_account]' );
 }
 
 

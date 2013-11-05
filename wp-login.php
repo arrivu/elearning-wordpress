@@ -113,7 +113,10 @@ function login_header($title = 'Log In', $message = '', $wp_error = '') {
 	<body class="login <?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 	<div id="login">
 		<?php /*?><h1><a href="<?php echo esc_url( $login_header_url ); ?>" title="<?php echo esc_attr( $login_header_title ); ?>"><?php bloginfo( 'name' ); ?></a></h1><?php */ ?>
-		<h1><a href="<?php echo esc_url( $login_header_url ); ?>" title="<?php echo esc_attr( $login_header_title ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+		<?php $login_header_url=get_site_url();
+			$login_header_title="The Compelling Image";
+		?>
+		<h1><a href="<?php echo esc_url( $login_header_url ); ?>" title="<?php echo esc_attr( $login_header_title ); ?>"><?php get_header_image(); ?></a></h1>
 	<?php
 
 	unset( $login_header_url, $login_header_title );

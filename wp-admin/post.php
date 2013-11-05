@@ -42,6 +42,10 @@ if ( $post ) {
  */
 function redirect_post($post_id = '') {
 	global $wpdb;
+	  $direct=ABSPATH;
+global $wpdb;
+require_once($direct."/course.php");
+$course=new Course(); 
 	if ( isset($_POST['save']) || isset($_POST['publish']) ) {
 		if($_POST['duration'])
 		{
@@ -54,7 +58,18 @@ function redirect_post($post_id = '') {
 			$instructor=$_POST['instructor_type'];
 			$qry='update wp_posts set instructor_type='.$instructor.' where ID='.$post_id;
 			$wpdb->query($qry);
+			//Teacher Enrollment
+		$get_lmsid="select lms_id from wp_posts where ID=".$post_id;
+		$getlms=$wpdb->get_row($get_lmsid);
+		$get_userlmsid="select user_lms from wp_users where ID=".$_POST['instructor_type'];
+		$get_userlms=$wpdb->get_row($get_userlmsid);
+		$courses=$course->enroll_teacher($getlms->lms_id,$get_userlms->user_lms);
+
 		}
+
+		
+
+
 		$status = get_post_status( $post_id );
 
 		if ( isset( $_POST['publish'] ) ) {
@@ -100,9 +115,9 @@ function redirect_post($post_id = '') {
 	if($_POST['post_type']=="product" && isset($_POST['publish']))
 	{	
 	
-	$instructor_post=$_POST['instructor_type'];
-	$qry_instructor="INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES ('".$instructor_post."', '_instructor_type', '');";
-	$wpdb->query($qry_instructor);	
+	//$instructor_post=$_POST['instructor_type'];
+	//$qry_instructor="INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES ('".$instructor_post."', '_instructor_type', '');";
+	//$wpdb->query($qry_instructor);	
 	$courses=$course->create_course(1,$_POST['post_ID'],$_POST['post_title'],$_POST['content']);
 	$qry='update wp_posts set lms_id='.$courses->id.' where post_title="'.$_POST['post_title'].'" and post_type="product" ';
 	$wpdb->query($qry);
@@ -130,6 +145,13 @@ function redirect_post($post_id = '') {
 			$instructor=$_POST['instructor_type'];
 			$qry='update wp_posts set instructor_type='.$instructor.' where ID='.$post_id;
 			$wpdb->query($qry);
+			//Teacher Enrollment
+		$get_lmsid="select lms_id from wp_posts where ID=".$post_id;
+		$getlms=$wpdb->get_row($get_lmsid);
+		$get_userlmsid="select user_lms from wp_users where ID=".$_POST['instructor_type'];
+		$get_userlms=$wpdb->get_row($get_userlmsid);
+		$courses=$course->enroll_teacher($getlms->lms_id,$get_userlms->user_lms);
+
 		}
 		else
 		{

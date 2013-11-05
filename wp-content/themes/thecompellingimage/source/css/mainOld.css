@@ -1192,11 +1192,11 @@ h1.heading_grey{
 	margin:15px 0 10px 12px;
 }
 .course_select{
-	width:515px;
+	width:50%;
 	float:left;
-	margin: -13px 0 0 70px;
+/*	margin: -13px 0 0 70px;
 	
-	height:155px;
+	height:155px;*/
 	background:url(../images/bg_slider.png) no-repeat 99% 0;
 }
 .course_select .grey14{

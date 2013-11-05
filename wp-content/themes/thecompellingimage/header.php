@@ -17,7 +17,7 @@
 <link href='https://fonts.googleapis.com/css?family=Noticia+Text' rel='stylesheet' type='text/css'>
 <?php wp_head(); ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-
+ 
 <script type="text/javascript"> 
 var $jQFlip=jQuery.noConflict(true);
 $jQFlip(document).ready(function(){
@@ -105,7 +105,7 @@ window.location.href="https://beta.thecompellingimage.com/";
 
 }
 </script>
-
+ 
 </head>
 <body>
 <div class="wrapper">
@@ -116,9 +116,7 @@ window.location.href="https://beta.thecompellingimage.com/";
 	<li><a id="yt"></a></li><li><a id="fb"></a></li><li><a id="tw"></a></li><li><a id="in"></a></li>
 	</ul>
 	<ul class="right_menu">
-		
-	
-	
+			
 	<?php $direct=get_site_url();
 		//echo $direct;
 		if(is_user_logged_in())
@@ -175,8 +173,9 @@ $postid=get_the_ID();
 $string = get_permalink();
 //echo $string;
 $pos = strpos($string, "product");
+$cour=strpos($string, "courses");
 $checkout = strpos($string, "checkout");
-    if ($pos == true) {
+    if ($pos == true || $cour == true) {
     
         putRevSlider("programmes");
     }

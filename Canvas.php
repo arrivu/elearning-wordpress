@@ -8,9 +8,11 @@ class Canvas{
 	function __construct($oauth_token = "", $api_root_url = ""){
 		$config = parse_ini_file("config.ini");
     	$tokenid = $config["canvastoken"];
+    	$caslogout=$config["caslogout"];
     	$canvas_url=$config["canvasurl"]."/api/v1";
     	$this->oauth_token = $tokenid;
 		$this->api_root_url = $canvas_url;	
+		$this->cas_url_logout=$caslogout;
 	}
 
 	public function get_json($url){
@@ -84,7 +86,7 @@ class Canvas{
 	public function cas_logout(){
 		$handle = curl_init();
 		$headers = array('cookie: tgt='.$_COOKIE["tgt"]);
-		curl_setopt($handle, CURLOPT_URL, "https://cas.thecompellingimage.com/cas/api-logout");
+		curl_setopt($handle, CURLOPT_URL, $this->cas_url_logout);
 	//curl_setopt($handle, CURLOPT_HTTPHEADER, $headers);
 		curl_setopt($handle, CURLOPT_COOKIE, "tgt=".$_COOKIE["tgt"]);
 		curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);

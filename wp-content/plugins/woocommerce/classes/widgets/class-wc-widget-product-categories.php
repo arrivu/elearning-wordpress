@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Product Categories Widget
@@ -8,6 +9,7 @@
  * @version 	1.6.4
  * @extends 	WP_Widget
  */
+
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -135,6 +137,7 @@ class WC_Widget_Product_Categories extends WP_Widget {
 			wp_list_categories( apply_filters( 'woocommerce_product_categories_widget_args', $cat_args ) );
 
 			echo '</ul>';
+
 
 		}
 

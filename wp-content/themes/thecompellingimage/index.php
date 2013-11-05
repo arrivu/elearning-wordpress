@@ -19,19 +19,19 @@ $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID)
 $style="display:inline-block;text-decoration:none;color:#fff;font:bold 13px Arial, Helvetica, sans-serif;margin:8px 0 0 10px;";
 if($count=="1")
 {
-    $rowclass="float:left;width:210px;height:94px;background:url('".$large_image_url[0]."') no-repeat;margin: 15px 20px 0 21px;";
+    $rowclass="float:left;width:210px;height:94px;background:url('".$large_image_url[0]."') no-repeat;background-size:210px 94px;margin: 15px 20px 0 21px;";
 }
 elseif($count=="2")
 {
-     $rowclass="float:left;width:210px;height:94px;background:url('".$large_image_url[0]."') no-repeat;margin: 15px 0 0 0;";
+     $rowclass="float:left;width:210px;height:94px;background:url('".$large_image_url[0]."') no-repeat;background-size:210px 94px;margin: 15px 0 0 0;";
 }
 elseif($count=="3")
 {
-     $rowclass="float:left;width:210px;height:94px;background:url('".$large_image_url[0]."') no-repeat;margin: 15px 20px 0 21px;";
+     $rowclass="float:left;width:210px;height:94px;background:url('".$large_image_url[0]."') no-repeat;background-size:210px 94px;margin: 15px 20px 0 21px;";
 }
 elseif($count=="4")
 {
-     $rowclass="float:left;width:210px;height:94px;background:url('".$large_image_url[0]."') no-repeat;margin: 15px 0 0 0;";
+     $rowclass="float:left;width:210px;height:94px;background:url('".$large_image_url[0]."') no-repeat;background-size:210px 94px;margin: 15px 0 0 0;";
 }
 ?>
 
@@ -39,7 +39,9 @@ elseif($count=="4")
 
 <div style="float: left;vertical-align: bottom;width: 100%;height: 35%;margin-top: 62px; background-color: black;
 opacity: 0.6;"  >
-    <a style="<?php echo $style; ?>" href="<?php echo bloginfo('url'); ?>/?post_type=product"><?php the_title(); ?></a>
+    <a style="<?php echo $style; ?>" href="<?php echo bloginfo('url'); ?>/?post_type=product">
+<div style="text-overflow:ellipsis;white-space:nowrap;width:14em;overflow:hidden; ">
+<?php the_title(); ?></div></a>
 </div>    
 
 <?php /*?>	
@@ -73,19 +75,19 @@ $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID)
 $style="display:inline-block;text-decoration:none;color:#fff;font:bold 13px Arial, Helvetica, sans-serif;margin:8px 0 0 10px;";
 if($count=="1")
 {
-    $rowclass="float:left;width:210px;height:94px;background:url('".$large_image_url[0]."') no-repeat;margin: 15px 20px 0 21px;";
+    $rowclass="float:left;width:210px;height:94px;background:url('".$large_image_url[0]."') no-repeat;background-size:210px 94px;margin: 15px 20px 0 21px;";
 }
 elseif($count=="2")
 {
-     $rowclass="float:left;width:210px;height:94px;background:url('".$large_image_url[0]."') no-repeat;margin: 15px 0 0 0;";
+     $rowclass="float:left;width:210px;height:94px;background:url('".$large_image_url[0]."') no-repeat;background-size:210px 94px;margin: 15px 0 0 0;";
 }
 elseif($count=="3")
 {
-     $rowclass="float:left;width:210px;height:94px;background:url('".$large_image_url[0]."') no-repeat;margin: 15px 20px 0 21px;";
+     $rowclass="float:left;width:210px;height:94px;background:url('".$large_image_url[0]."') no-repeat;background-size:210px 94px;margin: 15px 20px 0 21px;";
 }
 elseif($count=="4")
 {
-     $rowclass="float:left;width:210px;height:94px;background:url('".$large_image_url[0]."') no-repeat;margin: 15px 0 0 0;";
+     $rowclass="float:left;width:210px;height:94px;background:url('".$large_image_url[0]."') no-repeat;background-size:210px 94px;margin: 15px 0 0 0;";
 }
 ?>
 
@@ -93,7 +95,11 @@ elseif($count=="4")
 
 <div style="float: left;vertical-align: bottom;width: 100%;height: 35%;margin-top: 62px; background-color: black;
 opacity: 0.6;"  >
-    <a style="<?php echo $style; ?>" href="<?php echo bloginfo('url'); ?>/?post_type=product"><?php the_title(); ?></a>
+    <a style="<?php echo $style; ?>" href="<?php echo bloginfo('url'); ?>/?post_type=product">
+<div style="text-overflow:ellipsis;white-space:nowrap;width:14em;overflow:hidden; ">
+<?php the_title(); ?>
+</div>
+</a>
 </div>    <?php /*?>		
 <a href="<?php echo bloginfo('url'); ?>/programmes/#<?php the_title(); ?>" class="img_txt1">
 
@@ -112,7 +118,8 @@ opacity: 0.6;"  >
 <div class="get_start_row1_wrapper">
 <div class="get_start_row1">
 <?php   if ( function_exists(dynamic_sidebar('Free Lesson Section')) ) :
-            dynamic_sidebar('Free Lesson Section'); endif; ?>	
+            dynamic_sidebar('Free Lesson Section');  ?>	
+<?php endif; ?>
 </div>
 </div>
 
@@ -133,10 +140,58 @@ opacity: 0.6;"  >
 <div class="row_inner">
 <p class="title_red txt_center">Train with the World's Top Pro Photographers and Photoshop Experts!</p>
 <p class="title_grey txt_center">Featured Instructors</p>
+<style>
+#imgInstructor li img {width:135px;height:121px;}
+</style>
+
+<?php //Featured Instructor
+$allUsers = get_users('orderby=post_count&order=DESC');
+$users = array();
+$ct=0;
+foreach($allUsers as $currentUser)
+{
+	if(in_array( 'author', $currentUser->roles ))
+	{
+		//echo $currentUser->ID;
+		$all_meta_for_user = get_user_meta($currentUser->ID);
+		//echo $all_meta_for_user['jsIs_user_featured'][0];
+		
+		if($all_meta_for_user['jsIs_user_featured'][0]=="yes")
+		{
+			if($ct<=5)
+			{
+			$users[] = $currentUser;
+			}
+			$ct++;
+		}
+	}
+}
+//print_r($users);
+
+?>
+
+<ul class="instructor_list" id="imgInstructor">
+	<?php foreach($users as $user)
+		{
+			$string_site = get_site_url(); ?>
+<li>   
+			<a href="<?php echo $string_site."/instructors/?user=".$user->ID; ?>" title="<?php echo $user->display_name; ?>" style="text-decoration: none;color:#999"><?php echo get_avatar( $user->user_email); ?></a>
+			      <h2><div style="text-overflow:ellipsis;white-space:nowrap;width:8em;overflow:hidden; "><?php echo $user->display_name; ?></div></h2>
+</li>
+</li>
+			<?php
+		}
+	?>
+</ul>
+
+ <br/><br/><br/>
+
+
+
+
+
 <?php
-//$qry_feature='SELECT wpm.*,wps.* FROM wp_postmeta as wpm,wp_posts as wps where wps.ID=wpm.post_id and   wpm.meta_key="_featured-post" and meta_value="1" order by meta_ID  desc limit 0,6';    
-//global $wpdb;
-//$featured=$wpdb->query($qry_feature);
+
 $args = array(
     'posts_per_page'   => 6,
     'offset'           => 0,
@@ -156,30 +211,13 @@ $args = array(
 
 
 
-/*
- $args = array(
-        'posts_per_page' => 6,
-        'meta_key' => '_featured-post',
-        'meta_value' => 1,
-        'orderby' => 'meta_id',
-        'order' => 'desc'
-    );
-*/
-    $featured = new WP_Query($args);
-    //print_r($featured);
-    /*
-    if ($featured->have_posts()): while($featured->have_posts()): $featured->the_post();
-        the_title();
-        the_content();
-    endwhile; else:
 
-    endif;
-    */
-//global $query_string; query_posts($query_string . "&order=ASC");    
-//$qry_feature='SELECT wpm.*,wps.* FROM wp_postmeta as wpm,wp_posts as wps where wps.ID=wpm.post_id and   wpm.meta_key="_featured-post" and meta_value="1" order by meta_ID  desc limit 0,6';    
-//global $wpdb;
-//$featured=$wpdb->query($qry_feature);
- //query_posts($query_string . "&order=DESC");    
+    $featured = new WP_Query($args);
+    
+ ?>
+<?php /* ?>
+<?php
+
 if ($featured->have_posts()):
 ?>
 <ul class="instructor_list">
@@ -188,19 +226,22 @@ if ($featured->have_posts()):
     <li>
      <?php if( has_post_thumbnail() ) { ?>    
     <a href="<?php the_permalink(); ?>">
-        <?php /* Get the featured post image */ ?>
+       
          <?php 
-          /* This div is just for help you to organize your posts images */ ?>
+          
             <?php the_post_thumbnail(array(550,225)); ?>
     </a>
     <h2><?php the_title(); ?></h2>
     <?php } ?>
     </li>
-<?php endwhile; // End the loop. Whew. ?>
+<?php endwhile;?>
 <?php wp_reset_postdata(); ?>
 <?php endif; ?>
 </ul>
+
 <br/><br/><br/><br/><br/><br/><br/>
+<?php */?>
+
 <?php  	
 
 		if ( function_exists(dynamic_sidebar('Featured Instructors Section')) ) :
@@ -212,7 +253,6 @@ if ($featured->have_posts()):
 
 </div>
 </div>
- 
 
 <?php /* Set the name of the category and the number os posts to be displayed */?>
 <?php /*?>

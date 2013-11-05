@@ -11,4 +11,6 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 ?>
-<p class="woocommerce-info"><?php _e( 'No products found which match your selection.', 'woocommerce' ); ?></p>
+<br/>
+<br/>
+<p class="woocommerce-info"><?php _e( 'No courses found which match your selection.', 'woocommerce' ); ?></p>

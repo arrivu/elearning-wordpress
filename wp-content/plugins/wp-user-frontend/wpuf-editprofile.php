@@ -142,7 +142,7 @@ class WPUF_Edit_Profile {
                   
                         <tr>
                             <td><label for="email"><?php _e( 'E-mail' ); ?> <span class="description"><?php _e( '(required)' ); ?></span></label></td>
-                            <td><input type="text" name="email" id="email" value="<?php echo esc_attr( $profileuser->user_email ) ?>" class="regular-text" /> </td>
+                            <td><input type="text" name="email" id="email" value="<?php echo esc_attr( $profileuser->user_email ) ?>" disabled="disabled" class="regular-text" /> </td>
                         </tr>
                         <?php /* ?>
                         <tr>

@@ -2,6 +2,70 @@
 <script type='text/javascript' src='<?php echo get_site_url(); ?>/jquery-ui.min.js'></script> 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
 </script>
+
+<script language="javascript" type="text/javascript">
+
+//jQuery(document).ready(function($) {
+
+//  if (window.history && window.history.pushState) {
+
+   // window.history.pushState('forward', null, './#forward');
+
+//    $(window).on('popstate', function() {
+      
+ //   });
+<?php 
+//global $woocommerce;
+
+//		$woocommerce->cart->empty_cart(); 
+//	?>
+ // }
+//});
+
+// $(document).ready(function (e) {
+//   alert('hi');
+ 
+//  window.history.back = function () {
+//    window.location.replace('http://www.google.com');
+//    return "This session is expired and the history altered.";
+// }
+  
+//});
+/*
+$(document).ready(function () {
+
+    if(window.event){
+
+              if (window.event.clientX < 40 && window.event.clientY < 0) { 
+
+                  alert("back button is clicked");    
+
+              }else{
+
+                  alert("refresh button is clicked");
+              }
+
+    }else{
+
+        if (event.currentTarget.performance.navigation.type == 2) { 
+
+            alert("back button is clicked");    
+
+        }
+        if (event.currentTarget.performance.navigation.type == 1){
+
+            alert("refresh button is clicked");
+         }             
+    }
+});
+*/
+// $(document).ready(function () {
+// 	var url = document.referrer;
+//  alert(url);
+ 
+
+// });
+</script>
 <?php
 
 /**
@@ -115,22 +179,8 @@ Payment Options ($USD)
 </div>
 <div class="clearfix"></div>
 <div class="course_select">
-<?php /* ?>	
-<div class="trial">
-<p><input type="radio" name="course_duration" value="1" id="course_duration" />7 days trial?</p>
-<p><input type="radio" name="course_duration" value="2" id="course_duration" />Full Payment?</p>
-<p><input type="radio" name="course_duration" value="1" id="course_duration" />Installments?</p>
-</div>
-
-<div class="course_txt">
-<p>Save $25 per course when you
-pay in full.<span style="color:#d03423;"> No trial period.</span> You
-will not be allowed to cancel<br>	
-your account.</p>
-</div>
-<?php */ ?>
 <div class="promo_txt" style="background:transparent;border:0px;margin-top:16px;"><input type="text" name="coupon_code" style="width: 250px;height: 22px;color: #afafaf;font: normal 16px Arial,Helvetica, sans-serif;background: #666666;border: 1px solid #999999;clear: both;padding: 4px 0 0 3px;" placeholder="<?php _e( 'Promo code', 'woocommerce' ); ?>" id="coupon_code" value="" /></div>
-<input type="submit" class="button" style="margin: -21px 150px 0 0px;float:right;" name="apply_coupon" value="<?php _e( 'Use Promo', 'woocommerce' ); ?>" />
+<input type="submit" class="button" style="margin: -21px 25px 0 0px;float:right;" name="apply_coupon" value="<?php _e( 'Use Promo', 'woocommerce' ); ?>" />
 </div>
 <div class="slider"></div>
 <div class="price_det">
@@ -261,7 +311,7 @@ endif;
 
 	<?php do_action( 'woocommerce_before_checkout_registration_form', $checkout ); ?>
 
-	<div class="create-account">
+	<div class="create-account" style="background-color:#333333;">
 
 		
 
