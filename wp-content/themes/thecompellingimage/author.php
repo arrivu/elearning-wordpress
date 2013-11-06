@@ -100,7 +100,7 @@ setInterval(function(){
 <?php if(!$_REQUEST["user"]): ?>
 	<div  class="tp-caption big_white fade" style="margin: 10.5% 0% 0% 70%; ">
 <?php //echo get_avatar( $users[0]->ID, '128' ); ?>
-<div id="slideshow" ></div>
+<?php /* ?><div id="slideshow" ></div><?php */ ?>
 </div>
 
 <div class="tp-caption big_white fade" id="test">
@@ -125,8 +125,9 @@ setInterval(function(){
 <?php if($_REQUEST["user"]):
 $userid=$_REQUEST["user"];
  ?>
+<link rel="stylesheet" href="<?php echo bloginfo('template_url'); ?>/source/css/editor-style.css" /> 
 <h1 class="about_compelling" style="text-align: center; color: #d03423;">Instructor's Profile</h1>
-<ul class="list_course">
+<ul>
 <style>
 .thumb-wrapper {
 position:relative;
@@ -140,9 +141,9 @@ position:relative;
 //echo $src_img;
 ?>
 
-<li class="list_item clearfix">
+<li class="list_item clearfix" style="color:#999999;">
 <div class="content">
-<div class="column1">
+<div style="width:140px !important;float:left;padding:5px 20px 5px 5px;">
 <?php /*?><img src="images/img_akash.png" style="margin:0 0 15px 17px;" /><?php */ ?>
 <?php //echo get_avatar( $userid, '128' );
 $youtubeurl=get_user_meta($userid, 'jabber', true);
@@ -150,30 +151,28 @@ $youtubeurl=get_user_meta($userid, 'jabber', true);
  <?php if($youtubeurl){ ?>
 <div class="thumb-wrapper">
 <a href="<?php echo get_user_meta($userid, 'jabber', true); ?>" class="thickbox">	
-<img src="<?php echo $src_img?>" width="122" height="128"/><span style="opacity:0.5;background-color:#F2F2F2 !important;filter:Alpha(opacity=50);padding-left:42px;padding-right:10px;border:1px solid gray;position:absolute;top: 43px;left: 32px;width: 5%;height: 35%;z-index: 100;background: transparent url('<?php echo $hturl;?>') no-repeat;background-position:center;background-size:40px;40px;"></span>
+<img src="<?php echo $src_img?>" width="136" height="148"/><span style="opacity:0.5;background-color:#F2F2F2 !important;filter:Alpha(opacity=50);padding-left:42px;padding-right:10px;border:1px solid gray;position:absolute;top: 43px;left: 32px;width: 5%;height: 35%;z-index: 100;background: transparent url('<?php echo $hturl;?>') no-repeat;background-position:center;background-size:40px;40px;"></span>
 </a>
 </div>
 <?php }else{ ?>
-<div class="thumb-wrapper">
-	
+<div class="thumb-wrapper">	
 <img src="<?php echo $src_img?>" width="122" height="128"/>
 
 </div>
 <?php } ?>
 </div>
-<div class="column2">
+<div style="width:742px !important;float:left;padding:5px 5px 5px 5px;vertical-align: top;">
 <?php global $wpdb;
 $get_userid="select * from wp_users where ID=".$userid;
 		$getuser_detail=$wpdb->get_row($get_userid);
 ?>	
 
 
-<h4>
-	<?php echo $getuser_detail->display_name; ?></h4>	
-<p>
+
+	<div style="font: normal 18px Arial, Helvetica, sans-serif;color: #cccccc !important;"><?php echo $getuser_detail->display_name; ?>	</div>
+
 <?php echo get_user_meta($userid, 'description', true); ?>
-<p>
-</p>
+
 </div>
 </div>
 
@@ -184,14 +183,20 @@ $get_userid="select * from wp_users where ID=".$userid;
 <br/>	
 <div class="grey_border"></div>
 <div class="title ">
-<h4>Connect</h4>
+<div style="font: normal 18px Arial, Helvetica, sans-serif;color: #cccccc !important;">Connect</div>
+<?php if($getuser_detail->user_url): ?>
 <a class="site_address">
 <?php echo $getuser_detail->user_url; ?>
-</a><br>
+</a>
+<?php endif; ?>
+<br/>
 <?php /* ?><a class="site_address">000 0000 0000 (office)</a><?php */?>
-<h1 class="follow" ><a target="_blank" href="<?php echo get_user_meta($userid, 'facebook', true); ?>"><img src="<?php echo $direct; ?>/HTML/images/ico_fb.png"></a> 
-	<a target="_blank" href="<?php echo get_user_meta($userid, 'twitter', true); ?>"><img src="<?php echo $direct; ?>/HTML/images/ico_twitter1.png"></a></h1>
+
 </div>
+<div style="float:right;padding-bottom:15px;">
+	<a target="_blank" href="<?php echo get_user_meta($userid, 'facebook', true); ?>"><img src="<?php echo $direct; ?>/HTML/images/ico_fb.png"></a> 
+	<a target="_blank" href="<?php echo get_user_meta($userid, 'twitter', true); ?>"><img src="<?php echo $direct; ?>/HTML/images/ico_twitter1.png"></a>
+</div>	
 </li>
 </ul>
 

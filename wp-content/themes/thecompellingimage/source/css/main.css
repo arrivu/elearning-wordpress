@@ -283,7 +283,7 @@ ul.menu li a:hover, ul.menu li a.sel{
 .img_col1{
 	float:left;
 	width:481px;
-	height:284px;
+	height:284px; 
 	background:#333333;
 	margin:0 20px 0 0;
 	}

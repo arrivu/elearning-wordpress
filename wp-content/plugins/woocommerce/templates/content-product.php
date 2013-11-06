@@ -78,7 +78,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 			?>
 			<?php if($instr): ?>
 			<div style="height: 35px;width: 150px;background: #333333;padding: 0;position: relative;margin: 0 0 10px 0;">
-				<?php echo "Instructor:";?><a style="color:white;font: bold 12px/20px Arial, Helvetica, sans-serif;" href="<?php echo $seturl.'/instructors/?user='.$post->instructor_type;?>">
+				Instructor: <a style="color:white;font: bold 12px/20px Arial, Helvetica, sans-serif;" href="<?php echo $seturl.'/instructors/?user='.$post->instructor_type; ?>">
 				<?php echo get_user_meta($post->instructor_type, 'first_name', true); ?></a>
 			</div>	
 			<?php endif; ?>
