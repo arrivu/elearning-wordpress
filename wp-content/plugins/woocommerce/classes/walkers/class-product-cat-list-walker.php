@@ -63,15 +63,20 @@ class WC_Product_Cat_List_Walker extends Walker {
 			
 		//print_r($args);	
 		//echo $cat->count;
+
+		global $wp_query;
+		$catpermalink = $wp_query->get_queried_object();
+		//print_r($catpermalink);
+		$permalink = $_SERVER['REQUEST_URI'];
+        
 		if($cat->category_parent=="0")
 		{	
 			$output .= '<li class="cat-item cat-item-' . $cat->term_id;
-		/*	
-		if ( $args['current_category']=="13" && $args['current_category_ancestors']=="")
+			
+		if (($catpermalink->parent=="13" && $cat->term_id=="13") || ($catpermalink->parent=="15" && $cat->term_id=="15") || ($catpermalink->parent=="32" && $cat->term_id=="32") || ($catpermalink->parent=="18" && $cat->term_id=="18") || ($catpermalink->parent=="16" && $cat->term_id=="16") || ($catpermalink->parent=="17" && $cat->term_id=="17") || ($catpermalink->parent=="19" && $cat->term_id=="19") || ($catpermalink->parent=="29" && $cat->term_id=="29"))
 		{	
 			$output .= ' current-cat-parent';
-		}		
-		*/
+		}
 		if ( $args['current_category'] == $cat->term_id )
 		{	
 			$output .= ' current-cat';

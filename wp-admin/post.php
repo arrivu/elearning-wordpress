@@ -46,11 +46,20 @@ function redirect_post($post_id = '') {
 global $wpdb;
 require_once($direct."/course.php");
 $course=new Course(); 
+	//echo $_POST['enrollstart'];
+	//exit();
 	if ( isset($_POST['save']) || isset($_POST['publish']) ) {
+		//print_r($_POST);
 		if($_POST['duration'])
 		{
 			$duration=$_POST['duration'];
 			$qry='update wp_posts set duration='.$duration.' where ID='.$post_id;
+			$wpdb->query($qry);
+		}
+		if($_POST['enrollstart'])
+		{
+			$enrollstart=$_POST['enrollstart'];
+			$qry='update wp_posts set enrollstart="'.$enrollstart.'" where ID='.$post_id;
 			$wpdb->query($qry);
 		}
 		if($_POST['instructor_type'])
@@ -139,6 +148,17 @@ $course=new Course();
 			$qry='update wp_posts set duration="" where ID='.$post_id;
 			$wpdb->query($qry);
 
+		}
+		if($_POST['enrollstart'])
+		{
+			$enrollstart=$_POST['enrollstart'];
+			$qry='update wp_posts set enrollstart="'.$enrollstart.'" where ID='.$post_id;
+			$wpdb->query($qry);
+		}
+		else
+		{
+			$qry='update wp_posts set enrollstart="" where ID='.$post_id;
+			$wpdb->query($qry);	
 		}
 		if($_POST['instructor_type'])
 		{

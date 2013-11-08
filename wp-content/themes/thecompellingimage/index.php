@@ -11,104 +11,8 @@ $args = array( 'post_type' => 'product','meta_key' => 'Popular Course','posts_pe
 $loop = new WP_Query( $args );
 ?>
 
-<?php /* ?>
-<div class="img_col1">
-<div class="col1txt">Photography</div>    
-<?php $count=0; ?>
-<table cellpadding="10">
-    <tr>
-<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-<?php $count++;
-$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
-$style="display:inline-block;text-decoration:none;color:#fff;font:bold 13px Arial, Helvetica, sans-serif;margin:8px 0 0 10px;";
-if($count=="1")
-{
-    ?>
-    <td>
-    <img width="210" height="125" src="<?php echo $large_image_url[0]; ?>" />
-    <div style="float: left;vertical-align: bottom;width: 100%;height: 35%;margin-top: 62px; background-color: black;
-opacity: 0.6;"  >
-    <a style="<?php echo $style; ?>" href="<?php echo bloginfo('url'); ?>/?post_type=product">
-<div style="text-overflow:ellipsis;white-space:nowrap;width:14em;overflow:hidden; ">
-<?php the_title(); ?>
-</div>
-</a>
-</div>
-    </td>
-    <?php
-    $rowclass="float:left;width:210px;height:94px;background:url('".$large_image_url[0]."') no-repeat;background-size:210px 94px;margin: 15px 20px 0 21px;";
-    $rowimg="row1img1";
-}
-elseif($count=="2")
-{
-     ?>
-    <td>
-    <img width="210" height="125" src="<?php echo $large_image_url[0]; ?>" />
-    <div style="float: left;vertical-align: bottom;width: 100%;height: 35%;margin-top: 62px; background-color: black;
-opacity: 0.6;"  >
-    <a style="<?php echo $style; ?>" href="<?php echo bloginfo('url'); ?>/?post_type=product">
-<div style="text-overflow:ellipsis;white-space:nowrap;width:14em;overflow:hidden; ">
-<?php the_title(); ?>
-</div>
-</a>
-</div>
-    </td>
-    <?php
-    echo "</tr><tr>";
-    $rowimg="row1img2";
-    $rowclass="float:left;width:210px;height:94px;background:url('".$large_image_url[0]."') no-repeat;background-size:210px 94px;margin: 15px 0 0 0;";
-}
-elseif($count=="3")
-{
-     ?>
-    <td>
-    <img width="210" height="125" src="<?php echo $large_image_url[0]; ?>" />
-    <div style="float: left;vertical-align: bottom;width: 100%;height: 35%;margin-top: 62px; background-color: black;
-opacity: 0.6;"  >
-    <a style="<?php echo $style; ?>" href="<?php echo bloginfo('url'); ?>/?post_type=product">
-<div style="text-overflow:ellipsis;white-space:nowrap;width:14em;overflow:hidden; ">
-<?php the_title(); ?>
-</div>
-</a>
-</div>
-    </td>
-    <?php
-    $rowimg="row2img1";
-    $rowclass="float:left;width:210px;height:94px;background:url('".$large_image_url[0]."') no-repeat;background-size:210px 94px;margin: 15px 20px 0 21px;";
-}
-elseif($count=="4")
-{
-     ?>
-    <td>
-    <img width="210" height="125" src="<?php echo $large_image_url[0]; ?>" />
-    <div style="float: left;vertical-align: bottom;width: 100%;height: 35%;margin-top: 62px; background-color: black;
-opacity: 0.6;"  >
-    <a style="<?php echo $style; ?>" href="<?php echo bloginfo('url'); ?>/?post_type=product">
-<div style="text-overflow:ellipsis;white-space:nowrap;width:14em;overflow:hidden; ">
-<?php the_title(); ?>
-</div>
-</a>
-</div>
-    </td>
-    <?php
-    echo "</tr>";
-    $rowimg="row2img2";
-    $rowclass="float:left;width:210px;height:94px;background:url('".$large_image_url[0]."') no-repeat;background-size:210px 94px;margin: 15px 0 0 0;";
-}
-?>
- 
 
-<?php endwhile; wp_reset_query(); // Remember to reset ?>
-</table>   
-</div>
-
-
-
-<br/><br/><br/><br/><br/>
-
-<?php */ ?>
-
-<div class="img_col1">
+<div class="img_col1" style="margin-left:50px;">
 <div class="col1txt">Photography</div>    
 <?php $count=0; ?>
 <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
@@ -117,7 +21,7 @@ $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID)
 $style="display:inline-block;text-decoration:none;color:#fff;font:bold 13px Arial, Helvetica, sans-serif;margin:8px 0 0 10px;";
 if($count=="1")
 {
-    $rowclass="float:left;width:175px;height:100px;background:url('".$large_image_url[0]."') no-repeat;background-size:175px 100px;margin: 15px 20px 0 50px;";
+    $rowclass="float:left;width:175px;height:100px;background:url('".$large_image_url[0]."') no-repeat;background-size:175px 100px;margin: 15px 20px 0 35px;";
 }
 elseif($count=="2")
 {
@@ -125,7 +29,7 @@ elseif($count=="2")
 }
 elseif($count=="3")
 {
-     $rowclass="float:left;width:175px;height:100px;background:url('".$large_image_url[0]."') no-repeat;background-size:175px 100px;margin: 15px 20px 0 50px;";
+     $rowclass="float:left;width:175px;height:100px;background:url('".$large_image_url[0]."') no-repeat;background-size:175px 100px;margin: 15px 20px 0 35px;";
 }
 elseif($count=="4")
 {
@@ -164,28 +68,28 @@ $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID)
 $style="display:inline-block;text-decoration:none;color:#fff;font:bold 13px Arial, Helvetica, sans-serif;margin:8px 0 0 10px;";
 if($count=="1")
 {
-    $rowclass="float:left;width:210px;height:94px;background:url('".$large_image_url[0]."') no-repeat;background-size:210px 94px;margin: 15px 20px 0 21px;";
+    $rowclass="float:left;width:175px;height:100px;background:url('".$large_image_url[0]."') no-repeat;background-size:175px 100px;margin: 15px 20px 0 35px;";
 }
 elseif($count=="2")
 {
-     $rowclass="float:left;width:210px;height:94px;background:url('".$large_image_url[0]."') no-repeat;background-size:210px 94px;margin: 15px 0 0 0;";
+     $rowclass="float:left;width:175px;height:100px;background:url('".$large_image_url[0]."') no-repeat;background-size:175px 100px;margin: 15px 0 0 0;";
 }
 elseif($count=="3")
 {
-     $rowclass="float:left;width:210px;height:94px;background:url('".$large_image_url[0]."') no-repeat;background-size:210px 94px;margin: 15px 20px 0 21px;";
+     $rowclass="float:left;width:175px;height:100px;background:url('".$large_image_url[0]."') no-repeat;background-size:175px 100px;margin: 15px 20px 0 35px;";
 }
 elseif($count=="4")
 {
-     $rowclass="float:left;width:210px;height:94px;background:url('".$large_image_url[0]."') no-repeat;background-size:210px 94px;margin: 15px 0 0 0;";
+     $rowclass="float:left;width:175px;height:100px;background:url('".$large_image_url[0]."') no-repeat;background-size:175px 100px;margin: 15px 0 0 0;";
 }
 ?>
 
 <div style="<?php echo $rowclass; ?>"> 
 
-<div style="float: left;vertical-align: bottom;width: 100%;height: 35%;margin-top: 62px; background-color: black;
+<div style="float: left;vertical-align: bottom;width: 100%;height: 35%;margin-top: 65px; background-color: black;
 opacity: 0.6;"  >
     <a style="<?php echo $style; ?>" href="<?php echo bloginfo('url'); ?>/?post_type=product">
-<div style="text-overflow:ellipsis;white-space:nowrap;width:14em;overflow:hidden; ">
+<div style="text-overflow:ellipsis;white-space:nowrap;width:12em;overflow:hidden; ">
 <?php the_title(); ?>
 </div>
 </a>
@@ -200,17 +104,11 @@ opacity: 0.6;"  >
 </div>
 <?php endwhile; wp_reset_query(); // Remember to reset ?>
 </div>
-
+<br/><br/>
 </div>
 </div>
 <?php //if ( function_exists(dynamic_sidebar('Free Lesson Section')) ) : ?>
-<div class="get_start_row1_wrapper">
-<div class="get_start_row1">
-<?php   if ( function_exists(dynamic_sidebar('Free Lesson Section')) ) :
-            dynamic_sidebar('Free Lesson Section');  ?>	
-<?php endif; ?>
-</div>
-</div>
+
 
 <div class="get_start_black">
 <div class="get_start_black_row">

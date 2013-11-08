@@ -207,6 +207,9 @@ else
 <p class="form-field _regular_price_field "><label for="_regular_price">Duration</label>
 	<?php
 $duration = array(
+	"7" => "1 Week",
+	"14" => "2 Weeks",
+	"21" => "3 Weeks",
     "1" => "1 Month",
     "2" => "2 Months",
     "3" => "3 Months",
@@ -252,6 +255,9 @@ else
 	</select>
 	
 </p>	
+
+
+
 			<?php
 
 			echo '<div class="options_group hide_if_grouped">';
@@ -285,22 +291,42 @@ else
 				) ) );
 
 				// Special Price
-				woocommerce_wp_text_input( array( 'id' => '_sale_price', 'class' => 'wc_input_price short', 'label' => __( 'Sale Price', 'woocommerce' ) . ' ('.get_woocommerce_currency_symbol().')', 'description' => '<a href="#" class="sale_schedule">' . __( 'Schedule', 'woocommerce' ) . '</a>', 'type' => 'number', 'custom_attributes' => array(
+
+				woocommerce_wp_text_input( array( 'id' => '_sale_price', 'class' => 'wc_input_price short', 'label' => __( 'Sale Price', 'woocommerce' ) . ' ('.get_woocommerce_currency_symbol().')', 'description' => '<a href="#" class="sale_schedule">' . __( 'Enrollments Schedule', 'woocommerce' ) . '</a>', 'type' => 'number', 'custom_attributes' => array(
 					'step' 	=> 'any',
 					'min'	=> '0'
 				) ) );
-
+				if($_REQUEST['action']=="edit")
+				{
+				$enrollstart="select enrollstart from wp_posts where ID=".$_REQUEST['post'];
+						$enrollstartvalue=$wpdb->get_row($enrollstart);
+						$enrollstart_edit= $enrollstartvalue->enrollstart;
+				}	
+				else
+				{
+					$enrollstart_edit="";
+				}
 				// Special Price date range
+				$sale_price_dates_from 	= $enrollstart_edit;
+				//$sale_price_dates_to 	= ( $date = get_post_meta( $thepostid, 'enroll_dates_to', true ) ) ? date_i18n( 'Y-m-d', $date ) : '';
+
+				echo '	<p class="form-field sale_price_dates_fields" style="display: block;">
+							<label for="_sale_price_dates_from">' . __( 'Course Start Dates', 'woocommerce' ) . '</label>
+							<input type="text" class="short" name="enrollstart" id="_sale_price_dates_from" value="' . $sale_price_dates_from . '" readonly placeholder="' . _x( 'From&hellip;', 'placeholder', 'woocommerce' ) . ' YYYY-MM-DD" maxlength="10" pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])" />
+							
+							<a href="#" class="cancel_sale_schedule">'. __( 'Cancel', 'woocommerce' ) .'</a>
+						</p>';	
+				/*		
 				$sale_price_dates_from 	= ( $date = get_post_meta( $thepostid, '_sale_price_dates_from', true ) ) ? date_i18n( 'Y-m-d', $date ) : '';
 				$sale_price_dates_to 	= ( $date = get_post_meta( $thepostid, '_sale_price_dates_to', true ) ) ? date_i18n( 'Y-m-d', $date ) : '';
 
-				echo '	<p class="form-field sale_price_dates_fields">
+				echo '	<p class="form-field sale_price_dates_fields" style="display: block;">
 							<label for="_sale_price_dates_from">' . __( 'Sale Price Dates', 'woocommerce' ) . '</label>
 							<input type="text" class="short" name="_sale_price_dates_from" id="_sale_price_dates_from" value="' . $sale_price_dates_from . '" placeholder="' . _x( 'From&hellip;', 'placeholder', 'woocommerce' ) . ' YYYY-MM-DD" maxlength="10" pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])" />
 							<input type="text" class="short" name="_sale_price_dates_to" id="_sale_price_dates_to" value="' . $sale_price_dates_to . '" placeholder="' . _x( 'To&hellip;', 'placeholder', 'woocommerce' ) . '  YYYY-MM-DD" maxlength="10" pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])" />
 							<a href="#" class="cancel_sale_schedule">'. __( 'Cancel', 'woocommerce' ) .'</a>
 						</p>';
-
+				*/
 				do_action( 'woocommerce_product_options_pricing' );
 
 			echo '</div>';

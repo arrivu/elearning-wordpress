@@ -75,13 +75,47 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 				//print_r($post);
 				$seturl=get_site_url();
 			$instr=get_user_meta($post->instructor_type, 'first_name', true);	
+			$duration_time=$post->duration;
+			if($duration_time=="7")
+				$duration="1 Week";
+			elseif($duration_time=="14")
+				$duration="2 Weeks";
+			elseif($duration_time=="21")
+				$duration="3 Weeks";
+			elseif($duration_time=="1")
+				$duration="1 Month";
+			elseif($duration_time=="2")
+				$duration="2 Months";
+			elseif($duration_time=="3")
+				$duration="3 Months";
+			elseif($duration_time=="4")
+				$duration="4 Months";
+			elseif($duration_time=="5")
+				$duration="5 Months";
+			elseif($duration_time=="6")
+				$duration="6 Months";
+			elseif($duration_time=="12")
+				$duration="1 Year";
+			elseif($duration_time=="24")
+				$duration="2 Years";
+			elseif($duration_time=="36")
+				$duration="3 Years";
+			else
+				$duration="";
+
 			?>
-			<?php if($instr): ?>
-			<div style="height: 35px;width: 150px;background: #333333;padding: 0;position: relative;margin: 0 0 10px 0;">
-				Instructor: <a style="color:white;font: bold 12px/20px Arial, Helvetica, sans-serif;" href="<?php echo $seturl.'/instructors/?user='.$post->instructor_type; ?>">
+			
+			<div style="height: 26px;width: 150px;background: #333333;padding: 0;position: relative;margin: 0 0 10px 0;">
+				<?php /* ?>
+				Instructor:
+				<?php if($instr): ?>	
+				 <a style="color:white;font: bold 12px/20px Arial, Helvetica, sans-serif;" href="<?php echo $seturl.'/instructors/?user='.$post->instructor_type; ?>">
 				<?php echo get_user_meta($post->instructor_type, 'first_name', true); ?></a>
+				<?php endif; ?><br/><?php */ ?>
+				Duration:
+				<?php echo $duration; ?>
 			</div>	
-			<?php endif; ?>
+			
 			
 	</div>	
 	<div class="column2">

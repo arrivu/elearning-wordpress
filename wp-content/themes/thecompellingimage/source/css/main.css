@@ -282,15 +282,15 @@ ul.menu li a:hover, ul.menu li a.sel{
 }
 .img_col1{
 	float:left;
-	width:481px;
-	height:284px; 
+	width:440px;
+	height:296px; 
 	background:#333333;
 	margin:0 20px 0 0;
 	}
 	.col1txt{
 	color:#fff;
 	font:normal 18px Arial, Helvetica, sans-serif;
-	margin:15px 0 0 12px; 
+	margin:15px 0 0 33px; 
 	}
 	.row1img1{
 		float:left;
@@ -357,8 +357,8 @@ ul.menu li a:hover, ul.menu li a.sel{
 	
 .img_col2{
 	float:left;
-	width:481px;
-	height:284px;
+	width:437px;
+	height:296px;
 	background:#333333;
 }
 .row3img1{
@@ -1119,7 +1119,7 @@ li.enroll {
 }
 .enroll .enroll_column1 {
 	float:left;
-	width:300px;
+	width:283px;
 	margin:0 14px 10px 0;
 }
 

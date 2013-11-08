@@ -37,6 +37,11 @@ $customer_orders = get_posts( array(
     'post_status' => 'publish'
 ) );
 $direct=ABSPATH;
+require_once($direct."/wp-content/plugins/woocommerce/classes/wooclass.php");
+$woo_class=new Wooclass();
+//$user_ID=wp_get_current_user();	
+$user_ID=$current_user->ID;
+//echo $user_ID;
 global $wpdb;
 $config = parse_ini_file("config.ini");
     	$course_url = $config["canvasurl"];
@@ -66,7 +71,9 @@ if ( $customer_orders ) : ?>
 					<?php
 		if (sizeof($order->get_items())>0) {
 			foreach($order->get_items() as $item) {
-
+				$result=$woo_class->fused_has_user_bought($user_ID,$item['product_id']);
+				if($result)
+				{	
 				$_product = get_product( $item['variation_id'] ? $item['variation_id'] : $item['product_id'] );
 				$get_lmsid="select lms_id from wp_posts where ID=".$item['product_id'];
 
@@ -86,6 +93,8 @@ if ( $customer_orders ) : ?>
 					?>
 					<a href="<?php echo $canvas_url; ?>"  rel="nofollow" class="red_txt_normal button product_type_simple">Take This Course</a>
 					<?php
+
+				}
 					//echo '<a href="'.$canvas_url.'">Take This Course</a>';
 
 				/*			
