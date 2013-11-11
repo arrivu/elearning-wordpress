@@ -126,7 +126,7 @@ setInterval(function(){
 $userid=$_REQUEST["user"];
  ?>
 <link rel="stylesheet" href="<?php echo bloginfo('template_url'); ?>/source/css/editor-style.css" /> 
-<h1 class="about_compelling" style="text-align: center; color: #d03423;">Instructor's Profile</h1>
+<h1 style="text-align: center;font-weight: bold;display: block;font-size: 2em;font:normal 34px myrid, Arial, Helvetica, sans-serif; color: #d03423;">Instructor's Profile</h1>
 <ul>
 <style>
 .thumb-wrapper {

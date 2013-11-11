@@ -121,7 +121,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 	<div class="column2">
 	<div class="pdtdes_dis"><div class="show"><?php the_excerpt(); ?></div><a href="javascript:;" class="red_txt_normal td_n">Find out more..</a>
 
-	<div class="pdtdes_hdn"><div class="cb"></div><?php the_content(); ?><a class="grey_txt_normal" href="javascript:;">Scroll Back Up</a></div>
+	<div class="pdtdes_hdn"><div class="cb"></div><?php the_content(); ?><a class="grey_txt_normal" href="javascript:;">Scroll Back Up</a><br/></div>
 	
 	
 	

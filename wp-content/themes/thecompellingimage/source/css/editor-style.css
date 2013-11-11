@@ -235,7 +235,7 @@ sub {
  * 4.0 Links
  * ----------------------------------------------------------------------------
  */
-
+/*
 a {
 	color: #ca3c08;
 	text-decoration: none;
@@ -258,7 +258,7 @@ a:hover {
 a:hover {
 	text-decoration: underline;
 }
-
+*/
 
 /**
  * 5.0 Alignment
