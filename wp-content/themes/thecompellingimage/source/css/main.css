@@ -1018,8 +1018,11 @@ p.about_compelling{
 	margin:0 0 0 -13px;
 	display:none;
 }
+.billcountry{
+	margin-top: -47px !important;
+}
 .list_course li{
-	list-style:none;
+	/* list-style:none; */
 	font:normal 14px/20px Arial, Helvetica, sans-serif;
 	color:#999999;
 }

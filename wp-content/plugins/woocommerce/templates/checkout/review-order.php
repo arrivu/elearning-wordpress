@@ -150,6 +150,7 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 			<?php $woocommerce->nonce_field('process_checkout')?>
 
 			<?php do_action( 'woocommerce_review_order_before_submit' ); ?>
+<?php if ($woocommerce->cart->needs_payment()) : ?>			
 <div id="creditss">			
 <p class="credit_head">Enter your credit card information in our secure payment form.</p>
 <div class="credit_form">
@@ -206,6 +207,7 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 </div>
 </div>
 </div>
+<?php endif; ?>
 <div class="clear"></div>
 		
 <p class="form-row terms" style="height:42px;font-size:19px;">

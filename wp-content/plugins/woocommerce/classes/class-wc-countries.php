@@ -727,7 +727,7 @@ class WC_Countries {
 				'label'             => __( '', 'woocommerce' ),
 				'placeholder'       => __( 'Country', 'woocommerce' ),
 				'required'          => false,
-				'class'             => array( 'form-row-last'),
+				'class'             => array( 'form-row-last billcountry'),
 				'clear'             => true
 			),
 	

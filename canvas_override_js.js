@@ -9,8 +9,8 @@ function openWin()
          success = true
       }
     });
-    if(success){ //AND THIS CHANGED
-     window.open("http://beta.thecompellingimage.com/wp-login.php?action=logout","_self")
-    }
+    //if(success){ //AND THIS CHANGED
+     window.open("https://beta.thecompellingimage.com/wp-login.php?action=logout","_self")
+    //}
 
 }

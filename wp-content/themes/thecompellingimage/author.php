@@ -182,21 +182,22 @@ $get_userid="select * from wp_users where ID=".$userid;
 <br/>
 <br/>	
 <div class="grey_border"></div>
-<div class="title ">
-<div style="font: normal 18px Arial, Helvetica, sans-serif;color: #cccccc !important;">Connect</div>
-<?php if($getuser_detail->user_url): ?>
+<div class="title " style="padding-top:10px;">
+<div style="font: normal 18px Arial, Helvetica, sans-serif;color: #cccccc !important;width: 75%;
+float: left;">Connect<br><?php if($getuser_detail->user_url): ?>
 <a class="site_address">
 <?php echo $getuser_detail->user_url; ?>
 </a>
 <?php endif; ?>
-<br/>
-<?php /* ?><a class="site_address">000 0000 0000 (office)</a><?php */?>
-
 </div>
+
 <div style="float:right;padding-bottom:15px;">
 	<a target="_blank" href="<?php echo get_user_meta($userid, 'facebook', true); ?>"><img src="<?php echo $direct; ?>/HTML/images/ico_fb.png"></a> 
 	<a target="_blank" href="<?php echo get_user_meta($userid, 'twitter', true); ?>"><img src="<?php echo $direct; ?>/HTML/images/ico_twitter1.png"></a>
-</div>	
+</div>
+<?php /* ?><a class="site_address">000 0000 0000 (office)</a><?php */?>
+</div>
+	
 </li>
 <?php 
 $today = date("Y-m-d");      
@@ -218,16 +219,12 @@ $woo_class=new Wooclass();
 
 <p style="text-align:center";>The next session of the course starts on following dates - there are also other sessions to choose from to ensure you find the course that is most convenient for </p>
 <p style="text-align:center";>To buy a place on this course, please select the session that you would like to enroll on:</p>
-
+<ul class="enroll  overflow_fix">
+	
 	<?php foreach ($getcourse_detail as $res) { ?>
-<div class="enroll" >
-<div style="float:left !important;width:350px;">
+	<li style="list-style:none;">
 <div class="enroll_column1">
-<ul>
-<li style="text-align:center;width:350px;">	
-<h3><?php echo $res->post_title; ?><span class="grey_txt"> (Enroll before <?php echo Date('d-M-Y',strtotime($res->enrollstart)); ?>)</span></h3>
-</li><li style="text-align:center;width:350px;">
-<?php 
+<h3 style="text-align:center;"><?php echo $res->post_title; ?><!--<span class="grey_txt"> (Enroll before <?php echo Date('d-M-Y',strtotime($res->enrollstart)); ?>)</span>--></h3><?php 
 $result=$woo_class->fused_has_user_bought($user_ID->ID,$res->ID);
 $get_lmsid="select lms_id from wp_posts where ID=".$res->ID;
 $getlms=$wpdb->get_row($get_lmsid);
@@ -237,17 +234,15 @@ $canvas_url= $course_url.'/courses/'.$getlms->lms_id .'/modules';
 $siteurls=get_site_url();
 ?>
 <?php if($result): ?>
-<a href="<?php echo $canvas_url; ?>">Take this course</a>
+<a href="<?php echo $canvas_url; ?>" style="margin: 0 0 0 0px;">Take this course</a>
 <?php else: ?>	
-<a href="<?php echo $siteurls; ?>/courses/?add-to-cart=<?php echo $res->ID; ?>">Click here to enroll</a>
+<a href="<?php echo $siteurls; ?>/courses/?add-to-cart=<?php echo $res->ID; ?>" style="margin: 0 0 0 0px;">Click here to enroll</a>
 <?php endif; ?>
-<?php /* ?>
-<a >click here to enroll</a>
-<?php */ ?>
-</li></ul>
 </div>
-</div>
+</li>
 <?php } ?>
+
+</ul>
 </div>
 
 
