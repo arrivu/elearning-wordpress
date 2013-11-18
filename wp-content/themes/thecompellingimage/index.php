@@ -11,7 +11,6 @@ $args = array( 'post_type' => 'product','meta_key' => 'Popular Course','posts_pe
 $loop = new WP_Query( $args );
 ?>
 
-
 <div class="img_col1" style="margin-left:50px;">
 <div class="col1txt">Photography</div>    
 <?php $count=0; ?>
@@ -37,7 +36,7 @@ elseif($count=="4")
 }
 ?>
 
-<div style="<?php echo $rowclass; ?>"> 
+<div style="<?php echo $rowclass; ?>" title="<?php echo the_title(); ?>" class="tooltips"> 
 
 <div style="float: left;vertical-align: bottom;width: 100%;height: 35%;margin-top: 65px; background-color: black;
 opacity: 0.6;"  >
@@ -84,7 +83,7 @@ elseif($count=="4")
 }
 ?>
 
-<div style="<?php echo $rowclass; ?>"> 
+<div style="<?php echo $rowclass; ?>" title="<?php echo the_title(); ?>" class="tooltips"> 
 
 <div style="float: left;vertical-align: bottom;width: 100%;height: 35%;margin-top: 65px; background-color: black;
 opacity: 0.6;"  >

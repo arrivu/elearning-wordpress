@@ -8,7 +8,7 @@
  ?>	
 
 <h1 class="title">Find out more about this great offer!</h1>
-<a href="<?php echo $direct;?>?page_id=7" class="signup"> Sign Up for Course</a>
+<a href="<?php echo $direct;?>/free-courses" class="signup">Get Your Free Lessons Now</a>
 </div>
 <div class="stripe">
 <a><img src="<?php echo bloginfo('template_url'); ?>/source/images/img_wp.png"></a>

@@ -253,7 +253,11 @@ $getlms=$wpdb->get_row($get_lmsid);
 $get_userlmsid="select user_lms from wp_users where ID=".$current_user->ID;
 $get_userlms=$wpdb->get_row($get_userlmsid);
 $courses=$course->enroll_user($getlms->lms_id,$get_userlms->user_lms);
-
+//print_r($courses);
+//$qry='update wp_enrollment set id='.$courses->id.' , user_id='.$current_user->ID.',course_id='.$get_product_ids->meta_value;
+//echo $qry;
+//exit();
+  $wpdb->query($qry);
 
 }
 
@@ -287,7 +291,14 @@ function my_user_contactmethods($user_contactmethods){
   $user_contactmethods['jabber'] = 'Youtube video embed code'; 
   return $user_contactmethods;
 }
+function wpa104760_default_price( $post_id, $post ) {
 
+    if ( isset( $_POST['_regular_price'] ) && trim( $_POST['_regular_price'] ) == '' ) {
+        update_post_meta( $post_id, '_price', '0' );
+    }
+
+}
+add_action( 'woocommerce_process_product_meta', 'wpa104760_default_price' );
 
 
 

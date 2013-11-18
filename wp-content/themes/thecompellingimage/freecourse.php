@@ -4,15 +4,15 @@
  */  
 ?>
 <?php get_header(); ?>
-				
+<br/>				
 <div class="row_black_wrapper overflow_fix clearfix ">
 <div class="row_inner about_compelling clearfix overflow_fix">
-<h1 class="about_compelling">Get Free Courses</h1>
+<div class="title_red txt_center">Get Your Free Lessons Now</div>
 </div>
 </div>
 <div class="row_black_wrapper clearfix grey_border">
 <div class="row_inner  overflow_fix photography-sect">
-  <?php 
+  <?php  
 global $wpdb;
   // List posts by a Custom Field's values
 $meta_key = '_regular_price';  // The meta_key of the Custom Field
@@ -51,7 +51,7 @@ if ($rows) {
 
 $direct=ABSPATH;
 require_once($direct."/wp-content/plugins/woocommerce/classes/wooclass.php");
-$user_ID=wp_get_current_user(); 
+$user_ID = get_current_user_id();
 $woo_class=new Wooclass();
 
    $args = array('post_type' => 'product');
@@ -121,20 +121,31 @@ $duration_time=$category_posts->post->duration;
 </div>
 </div>  
 <?php
-$result=$woo_class->fused_has_user_bought($user_ID->ID,get_the_ID());
+
+$result=$woo_class->fused_has_user_bought($user_ID,get_the_ID());
 $get_lmsid="select lms_id from wp_posts where ID=".get_the_ID();
 $getlms=$wpdb->get_row($get_lmsid);
 $config = parse_ini_file("config.ini");
 $course_url = $config["canvasurl"];
 $canvas_url= $course_url.'/courses/'.$getlms->lms_id .'/modules';
 $siteurls=get_site_url();
+$link = array(
+      'url'   => '',
+      'label' => '',
+      'class' => ''
+    );
 ?>
 <div style="right:15%;postion:absolute;margin-top:5px;">
   <?php if($result): ?>
 <a href="<?php echo $canvas_url; ?>"  rel="nofollow" data-product_id="225" data-product_sku="777" class="red_txt_normal button product_type_simple" style="margin:47px 0 15px 0">Take this course</a>
-<?php else: ?>    
-  <a href="<?php echo $siteurls; ?>/courses/?add-to-cart=<?php echo get_the_ID(); ?>" rel="nofollow" data-product_id="225" data-product_sku="777" class="red_txt_normal button product_type_simple" style="margin:47px 0 15px 0">Enroll this course</a>
-<?php endif; ?>
+  <?php else: ?>
+ 
+  <a href="<?php echo $siteurls; ?>/courses/?add-to-cart=<?php echo get_the_ID(); ?>" rel="nofollow" data-product_id="<?php echo get_the_ID(); ?>" data-product_sku="777" class="red_txt_normal button product_type_simple" style="margin:47px 0 15px 0">Enroll on this course</a>
+  <br/>
+ <?php endif; ?>
+
+
+  
   </div>
 </div>
 <?php/* ?>
