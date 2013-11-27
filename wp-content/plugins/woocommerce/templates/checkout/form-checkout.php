@@ -189,8 +189,8 @@ if (sizeof($woocommerce->cart->get_cart())>0) :
 foreach ($woocommerce->cart->get_cart() as $item_id => $values) :
 $_product = $values['data'];
 if ($_product->exists() && $values['quantity']>0) :
-echo '<p>'.$_product->get_title().$woocommerce->cart->get_item_data( $values ).'</p>
-<p><span>list price</span> <span>'. apply_filters( 'woocommerce_checkout_item_subtotal', $woocommerce->cart->get_product_subtotal( $_product, $values['quantity'] ), $values, $item_id ) .'</span></p>
+echo '<p style="font-weight:bold;">'.$_product->get_title().$woocommerce->cart->get_item_data( $values ).'</p>
+<p><span>List price</span> <span>'. apply_filters( 'woocommerce_checkout_item_subtotal', $woocommerce->cart->get_product_subtotal( $_product, $values['quantity'] ), $values, $item_id ) .'</span></p>
 <p><span class="white">Multi Discount</span><span class="white">   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $0.00</span></p>
 <p style="border-top:1px solid #666666; padding-top:10px;"><span class="white"><strong>Total</strong></span><span class="white"><strong>'.$woocommerce->cart->get_cart_total().'</strong></span></p>
 <p><span class="white">Due Today</span><span class="white">'.$woocommerce->cart->get_cart_total().'</span></p>	
@@ -291,6 +291,7 @@ endif;
 	<div class="clear"></div>
 </form>
 <br/>
+
 <form name="checkout" method="post" class="checkout" action="<?php echo esc_url( $get_checkout_url ); ?>">
 	<?php if ( ! is_user_logged_in() && $checkout->enable_signup ) : ?>
 	<img src="<?php echo get_site_url(); ?>/wp-content/plugins/woocommerce/assets/images/ico_two.png" class="img_numbers" />
@@ -328,15 +329,18 @@ endif;
 	<?php do_action( 'woocommerce_after_checkout_registration_form', $checkout ); ?>
 </div>
 <?php endif; ?>
+<?php if ($woocommerce->cart->needs_payment()) : ?>
 <?php if ( ! is_user_logged_in() && $checkout->enable_signup ) : ?>
 <img src="<?php echo get_site_url(); ?>/wp-content/plugins/woocommerce/assets/images/ico_three.png" class="img_numbers" />
 <?php else: ?>
 	<img src="<?php echo get_site_url(); ?>/wp-content/plugins/woocommerce/assets/images/ico_two.png" class="img_numbers" />
 <?php endif; ?>
+
 	<div class="course_head">
 	<span class="grey18">
 	Billing information</span>
 	</div>
+	<?php endif; ?>
 	<?php if ( sizeof( $checkout->checkout_fields ) > 0 ) : ?>
 		
 		<?php if ($woocommerce->cart->needs_payment()) : ?>

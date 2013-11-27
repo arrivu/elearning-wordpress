@@ -43,30 +43,16 @@ $slash=str_replace('\/', '/', $comma);
 $(document).ready(function() {
 
 		 var imgArray =[<?php echo $slash; ?>];
-		  /*
-var imgArray = ['http://wordpress.com/rails/wp-content/uploads/2013/08/ins_Bobsacha.jpg', 
-                'http://wordpress.com/rails/wp-content/uploads/2013/08/ins_david.jpg', 
-                'http://wordpress.com/rails/wp-content/uploads/2013/08/ins_Donmarr.jpg'
-                
-               ];
-    alert(imgArray);    
-    */      
+	
  var nextBG = "url(" + imgArray[Math.floor(Math.random() * imgArray.length)] + ") no-repeat";
 $('#slideshow').css("background", nextBG);    
-//$('#slideshow').css("background-size","url('images/pic.jpg')");  
-//$('#slideshow').css("background-image","url(" + imgArray[Math.floor(Math.random() * imgArray.length)] + ") no-repeat");        
-//$("#slideshow").css("background-size":"100% 100%");
+
 $('#slideshow').css({"background-size":"135px 141px","width":"135px","height":"141px"}); 
-/*
-$("#slideshow").css({
-        'background-image' : +nextBG,
-        'background-size'  : '50%'
-    });
-*/
+
 setInterval(function(){
     nextBG = "url(" + imgArray[Math.floor(Math.random() * imgArray.length)] + ") no-repeat";
     $('#slideshow').fadeOut('slow', function() { 
-    	//$(this).css("background-size":"100% 100%");
+    	
         $(this).css("background", nextBG).fadeIn('slow');
         $(this).css({"background-size":"135px 141px","width":"135px","height":"141px"}); 
 
@@ -77,11 +63,15 @@ setInterval(function(){
 });
 </script>
 <?php $direct=get_site_url(); ?>
+
 <?php get_header(); ?>
+<?php // putRevSlider("instructor"); ?>
 <style>
 #instructor_team_greybottom li img {width:135px;height:141px;}
 
 </style>
+
+<?php /* ?>
 	<div style="margin:0px auto;background-color:#E9E9E9;padding:0px;margin-top:0px;margin-bottom:0px;height:470px;width:1280px;">
 
 <div class="tp-caption big_white fade" style="margin: 9% 0% 0% 10%"
@@ -99,8 +89,7 @@ setInterval(function(){
 					 style="margin: 19.5% 0% 0% 10%">by the Professionals</div>
 <?php if(!$_REQUEST["user"]): ?>
 	<div  class="tp-caption big_white fade" style="margin: 10.5% 0% 0% 70%; ">
-<?php //echo get_avatar( $users[0]->ID, '128' ); ?>
-<?php /* ?><div id="slideshow" ></div><?php */ ?>
+
 </div>
 
 <div class="tp-caption big_white fade" id="test">
@@ -117,7 +106,7 @@ setInterval(function(){
 		
 														</div>
 				</div>	
-
+<?php */?>
 
 <div class="row_black_wrapper overflow_fix clearfix ">
 <div class="row_inner about_compelling clearfix overflow_fix">
@@ -185,7 +174,7 @@ $get_userid="select * from wp_users where ID=".$userid;
 <div class="title " style="padding-top:10px;">
 <div style="font: normal 18px Arial, Helvetica, sans-serif;color: #cccccc !important;width: 75%;
 float: left;">Connect<br><?php if($getuser_detail->user_url): ?>
-<a class="site_address">
+<a class="site_address" href="<?php echo $getuser_detail->user_url; ?>" target="_new">
 <?php echo $getuser_detail->user_url; ?>
 </a>
 <?php endif; ?>
@@ -204,7 +193,8 @@ $today = date("Y-m-d");
 //echo $today;
 $NewDate=Date('Y-m-d', strtotime("-15 days"));
 //echo $NewDate;
-$get_courseid="SELECT * FROM wp_posts WHERE  (enrollstart BETWEEN '".$NewDate."' AND '".$today."') and instructor_type='".$userid."'";
+//$get_courseid="SELECT * FROM wp_posts WHERE  (enrollstart BETWEEN '".$NewDate."' AND '".$today."') and instructor_type='".$userid."'";
+$get_courseid="SELECT * FROM wp_posts WHERE instructor_type='".$userid."'";
 $getcourse_detail=$wpdb->get_results($get_courseid);
 $direct=ABSPATH;
 require_once($direct."/wp-content/plugins/woocommerce/classes/wooclass.php");

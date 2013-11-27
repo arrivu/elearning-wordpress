@@ -110,7 +110,7 @@ $duration_time=$category_posts->post->duration;
 
   ?>
       <?php the_post_thumbnail(array(135,141) ); ?>
-      <div style="height: 26px;width: 150px;background: #333333;padding: 0;position: relative;margin: 0 0 10px 0;">
+      <div style="height: 26px;width: 137px;text-align:center;background: #333333;padding: 0;position: relative;margin:-5px 0 10px 0;">
                 Duration:
         <?php echo $duration; ?>      </div>  
       

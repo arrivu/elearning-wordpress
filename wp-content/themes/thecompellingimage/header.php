@@ -174,10 +174,15 @@ $string = get_permalink();
 //echo $string;
 $pos = strpos($string, "product");
 $cour=strpos($string, "courses");
+$instruct=strpos($string, "instructors");
 $checkout = strpos($string, "checkout");
     if ($pos == true || $cour == true) {
     
         putRevSlider("programmes");
+    }
+    else if($instruct == true)
+    {
+    	putRevSlider("instructor");
     }
 if($postid=="44")
 {

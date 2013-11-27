@@ -105,7 +105,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 
 			?>
 			
-			<div style="height: 26px;width: 150px;background: #333333;padding: 0;position: relative;margin: 0 0 10px 0;">
+			<div style="height: 26px;text-align:center;width: 150px;background: #333333;padding: 0;position: relative;margin: 0 0 10px 0;">
 				<?php /* ?>
 				Instructor:
 				<?php if($instr): ?>	

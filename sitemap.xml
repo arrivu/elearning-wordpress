@@ -1,14 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="http://wordpress.com/rails/wp-content/plugins/google-sitemap-generator/sitemap.xsl"?><!-- generator="wordpress/3.6" -->
 <!-- sitemap-generator-url="http://www.arnebrachhold.de" sitemap-generator-version="3.2.9" -->
-<!-- generated-on="November 18, 2013 12:43 pm" -->
-<!-- Debug: Total comment count: 31 -->
+<!-- generated-on="November 27, 2013 11:25 am" -->
+<!-- Debug: Total comment count: 35 -->
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">	<url>
 		<loc>http://wordpress.com/rails/</loc>
-		<lastmod>2013-11-18T12:35:24+00:00</lastmod>
+		<lastmod>2013-11-27T11:25:30+00:00</lastmod>
 		<changefreq>daily</changefreq>
 		<priority>1.0</priority>
 	</url>
 <!-- Debug: Start Postings -->
+	<url>
+		<loc>http://wordpress.com/rails/contact-us/</loc>
+		<lastmod>2013-11-27T11:25:30+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.6</priority>
+	</url>
+<!-- Debug: Priority report of postID 596: Comments: 0 of 35 = 0 points -->
+	<url>
+		<loc>http://wordpress.com/rails/guides/the-reddit-marketing-guide/</loc>
+		<lastmod>2013-11-27T06:35:50+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+	<url>
+		<loc>http://wordpress.com/rails/photography-guides/</loc>
+		<lastmod>2013-11-27T06:27:36+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://wordpress.com/rails/photography-guidesold/</loc>
+		<lastmod>2013-11-27T06:26:42+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.6</priority>
+	</url>
+<!-- Debug: Priority report of postID 593: Comments: 0 of 35 = 0 points -->
+	<url>
+		<loc>http://wordpress.com/rails/guides/the-remarketing-guide/</loc>
+		<lastmod>2013-11-27T04:35:38+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 590: Comments: 0 of 35 = 0 points -->
+	<url>
+		<loc>http://wordpress.com/rails/guides/the-digg-marketing-guide/</loc>
+		<lastmod>2013-11-27T04:34:51+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 587: Comments: 0 of 35 = 0 points -->
+	<url>
+		<loc>http://wordpress.com/rails/guides/a-3-pronged-attack-to-inbound-marketing/</loc>
+		<lastmod>2013-11-27T04:33:56+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 584: Comments: 0 of 35 = 0 points -->
+	<url>
+		<loc>http://wordpress.com/rails/guides/an-introduction-to-search-marketing-iii/</loc>
+		<lastmod>2013-11-27T04:31:52+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 581: Comments: 0 of 35 = 0 points -->
+	<url>
+		<loc>http://wordpress.com/rails/guides/an-introduction-to-search-marketing-ii/</loc>
+		<lastmod>2013-11-27T04:30:36+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 578: Comments: 0 of 35 = 0 points -->
+	<url>
+		<loc>http://wordpress.com/rails/guides/an-introduction-to-search-marketing-i/</loc>
+		<lastmod>2013-11-27T04:29:46+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 575: Comments: 0 of 35 = 0 points -->
+	<url>
+		<loc>http://wordpress.com/rails/guides/google-web-master-tool/</loc>
+		<lastmod>2013-11-27T04:28:24+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 572: Comments: 0 of 35 = 0 points -->
+	<url>
+		<loc>http://wordpress.com/rails/guides/the-quora-marketing-guide/</loc>
+		<lastmod>2013-11-27T04:27:27+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 569: Comments: 0 of 35 = 0 points -->
+	<url>
+		<loc>http://wordpress.com/rails/guides/the-tumblr-marketing-guide/</loc>
+		<lastmod>2013-11-27T04:26:11+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 567: Comments: 0 of 35 = 0 points -->
+	<url>
+		<loc>http://wordpress.com/rails/guides/the-guy-kawasaki-marketing-guide/</loc>
+		<lastmod>2013-11-27T04:25:11+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 246: Comments: 0 of 35 = 0 points -->
+	<url>
+		<loc>http://wordpress.com/rails/guides/guides/</loc>
+		<lastmod>2013-11-27T04:23:58+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
 	<url>
 		<loc>http://wordpress.com/rails/glossary/</loc>
 		<lastmod>2013-11-14T11:59:23+00:00</lastmod>
@@ -63,16 +165,16 @@
 		<changefreq>weekly</changefreq>
 		<priority>0.6</priority>
 	</url>
-<!-- Debug: Priority report of postID 399: Comments: 0 of 31 = 0 points -->
+<!-- Debug: Priority report of postID 399: Comments: 0 of 35 = 0 points -->
 	<url>
-		<loc>http://wordpress.com/rails/399/</loc>
+		<loc>http://wordpress.com/rails/photography/399/</loc>
 		<lastmod>2013-10-15T11:15:08+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
-<!-- Debug: Priority report of postID 397: Comments: 0 of 31 = 0 points -->
+<!-- Debug: Priority report of postID 397: Comments: 0 of 35 = 0 points -->
 	<url>
-		<loc>http://wordpress.com/rails/resmi/</loc>
+		<loc>http://wordpress.com/rails/multimedia/resmi/</loc>
 		<lastmod>2013-10-15T11:06:28+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
@@ -101,121 +203,121 @@
 		<changefreq>weekly</changefreq>
 		<priority>0.6</priority>
 	</url>
-<!-- Debug: Priority report of postID 181: Comments: 0 of 31 = 0 points -->
+<!-- Debug: Priority report of postID 181: Comments: 0 of 35 = 0 points -->
 	<url>
-		<loc>http://wordpress.com/rails/allana-wesley-white/</loc>
+		<loc>http://wordpress.com/rails/photography/allana-wesley-white/</loc>
 		<lastmod>2013-09-12T07:33:15+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
-<!-- Debug: Priority report of postID 257: Comments: 0 of 31 = 0 points -->
+<!-- Debug: Priority report of postID 257: Comments: 0 of 35 = 0 points -->
 	<url>
-		<loc>http://wordpress.com/rails/tester/</loc>
+		<loc>http://wordpress.com/rails/multimedia/tester/</loc>
 		<lastmod>2013-09-12T07:23:31+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
-<!-- Debug: Priority report of postID 269: Comments: 0 of 31 = 0 points -->
+<!-- Debug: Priority report of postID 269: Comments: 0 of 35 = 0 points -->
 	<url>
-		<loc>http://wordpress.com/rails/wild-places/</loc>
+		<loc>http://wordpress.com/rails/blog/wild-places/</loc>
 		<lastmod>2013-09-10T10:02:02+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
-<!-- Debug: Priority report of postID 173: Comments: 0 of 31 = 0 points -->
+<!-- Debug: Priority report of postID 173: Comments: 0 of 35 = 0 points -->
 	<url>
-		<loc>http://wordpress.com/rails/laura-peischl/</loc>
+		<loc>http://wordpress.com/rails/instructors/laura-peischl/</loc>
 		<lastmod>2013-09-10T04:11:59+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
-<!-- Debug: Priority report of postID 177: Comments: 0 of 31 = 0 points -->
+<!-- Debug: Priority report of postID 177: Comments: 0 of 35 = 0 points -->
 	<url>
-		<loc>http://wordpress.com/rails/al-satterwhite/</loc>
+		<loc>http://wordpress.com/rails/instructors/al-satterwhite/</loc>
 		<lastmod>2013-09-10T04:11:13+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
-<!-- Debug: Priority report of postID 240: Comments: 0 of 31 = 0 points -->
+<!-- Debug: Priority report of postID 240: Comments: 0 of 35 = 0 points -->
 	<url>
-		<loc>http://wordpress.com/rails/robert/</loc>
+		<loc>http://wordpress.com/rails/instructors/robert/</loc>
 		<lastmod>2013-09-10T04:10:29+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
-<!-- Debug: Priority report of postID 155: Comments: 0 of 31 = 0 points -->
+<!-- Debug: Priority report of postID 155: Comments: 0 of 35 = 0 points -->
 	<url>
-		<loc>http://wordpress.com/rails/tim-clayton/</loc>
+		<loc>http://wordpress.com/rails/instructors/tim-clayton/</loc>
 		<lastmod>2013-09-07T12:20:16+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
-<!-- Debug: Priority report of postID 169: Comments: 0 of 31 = 0 points -->
+<!-- Debug: Priority report of postID 169: Comments: 0 of 35 = 0 points -->
 	<url>
-		<loc>http://wordpress.com/rails/claire-martin/</loc>
+		<loc>http://wordpress.com/rails/instructors/claire-martin/</loc>
 		<lastmod>2013-09-07T12:19:27+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
-<!-- Debug: Priority report of postID 151: Comments: 0 of 31 = 0 points -->
+<!-- Debug: Priority report of postID 151: Comments: 0 of 35 = 0 points -->
 	<url>
-		<loc>http://wordpress.com/rails/christopher-booker/</loc>
+		<loc>http://wordpress.com/rails/instructors/christopher-booker/</loc>
 		<lastmod>2013-09-07T10:08:30+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
-<!-- Debug: Priority report of postID 183: Comments: 0 of 31 = 0 points -->
+<!-- Debug: Priority report of postID 183: Comments: 0 of 35 = 0 points -->
 	<url>
-		<loc>http://wordpress.com/rails/lisa-wiltse/</loc>
+		<loc>http://wordpress.com/rails/instructors/lisa-wiltse/</loc>
 		<lastmod>2013-09-07T08:52:40+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
-<!-- Debug: Priority report of postID 165: Comments: 0 of 31 = 0 points -->
+<!-- Debug: Priority report of postID 165: Comments: 0 of 35 = 0 points -->
 	<url>
-		<loc>http://wordpress.com/rails/shawn-m-knox/</loc>
+		<loc>http://wordpress.com/rails/instructors/shawn-m-knox/</loc>
 		<lastmod>2013-09-07T08:34:38+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
-<!-- Debug: Priority report of postID 167: Comments: 0 of 31 = 0 points -->
+<!-- Debug: Priority report of postID 167: Comments: 0 of 35 = 0 points -->
 	<url>
-		<loc>http://wordpress.com/rails/don-marr/</loc>
+		<loc>http://wordpress.com/rails/instructors/don-marr/</loc>
 		<lastmod>2013-09-07T07:34:18+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
-<!-- Debug: Priority report of postID 159: Comments: 0 of 31 = 0 points -->
+<!-- Debug: Priority report of postID 159: Comments: 0 of 35 = 0 points -->
 	<url>
-		<loc>http://wordpress.com/rails/gina-genis/</loc>
+		<loc>http://wordpress.com/rails/instructors/gina-genis/</loc>
 		<lastmod>2013-09-07T07:23:11+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
-<!-- Debug: Priority report of postID 161: Comments: 0 of 31 = 0 points -->
+<!-- Debug: Priority report of postID 161: Comments: 0 of 35 = 0 points -->
 	<url>
-		<loc>http://wordpress.com/rails/jay-goodrich/</loc>
+		<loc>http://wordpress.com/rails/instructors/jay-goodrich/</loc>
 		<lastmod>2013-09-07T07:21:58+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
-<!-- Debug: Priority report of postID 179: Comments: 0 of 31 = 0 points -->
+<!-- Debug: Priority report of postID 179: Comments: 0 of 35 = 0 points -->
 	<url>
-		<loc>http://wordpress.com/rails/ami-vitale/</loc>
+		<loc>http://wordpress.com/rails/instructors/ami-vitale/</loc>
 		<lastmod>2013-09-07T07:20:13+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
-<!-- Debug: Priority report of postID 238: Comments: 0 of 31 = 0 points -->
+<!-- Debug: Priority report of postID 238: Comments: 0 of 35 = 0 points -->
 	<url>
-		<loc>http://wordpress.com/rails/williams/</loc>
+		<loc>http://wordpress.com/rails/instructors/williams/</loc>
 		<lastmod>2013-09-07T07:19:44+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
-<!-- Debug: Priority report of postID 185: Comments: 0 of 31 = 0 points -->
+<!-- Debug: Priority report of postID 185: Comments: 0 of 35 = 0 points -->
 	<url>
-		<loc>http://wordpress.com/rails/susan-wright/</loc>
+		<loc>http://wordpress.com/rails/instructors/susan-wright/</loc>
 		<lastmod>2013-09-07T07:19:23+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
@@ -225,19 +327,6 @@
 		<lastmod>2013-09-02T11:39:11+00:00</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.6</priority>
-	</url>
-	<url>
-		<loc>http://wordpress.com/rails/photography-guides/</loc>
-		<lastmod>2013-09-02T09:58:27+00:00</lastmod>
-		<changefreq>weekly</changefreq>
-		<priority>0.6</priority>
-	</url>
-<!-- Debug: Priority report of postID 246: Comments: 0 of 31 = 0 points -->
-	<url>
-		<loc>http://wordpress.com/rails/guides/</loc>
-		<lastmod>2013-09-02T09:50:17+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
 	</url>
 	<url>
 		<loc>http://wordpress.com/rails/blog/</loc>
@@ -264,76 +353,70 @@
 		<priority>0.6</priority>
 	</url>
 	<url>
-		<loc>http://wordpress.com/rails/contact-us/</loc>
-		<lastmod>2013-08-19T19:27:19+00:00</lastmod>
-		<changefreq>weekly</changefreq>
-		<priority>0.6</priority>
-	</url>
-	<url>
 		<loc>http://wordpress.com/rails/instructor_individual/</loc>
 		<lastmod>2013-08-19T18:07:06+00:00</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.6</priority>
 	</url>
-<!-- Debug: Priority report of postID 119: Comments: 0 of 31 = 0 points -->
+<!-- Debug: Priority report of postID 119: Comments: 0 of 35 = 0 points -->
 	<url>
-		<loc>http://wordpress.com/rails/g-m-b-akash/</loc>
+		<loc>http://wordpress.com/rails/instructors/g-m-b-akash/</loc>
 		<lastmod>2013-08-19T18:06:56+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
-<!-- Debug: Priority report of postID 175: Comments: 0 of 31 = 0 points -->
+<!-- Debug: Priority report of postID 175: Comments: 0 of 35 = 0 points -->
 	<url>
-		<loc>http://wordpress.com/rails/bob-sacha/</loc>
+		<loc>http://wordpress.com/rails/instructors/bob-sacha/</loc>
 		<lastmod>2013-08-19T17:31:48+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
-<!-- Debug: Priority report of postID 171: Comments: 0 of 31 = 0 points -->
+<!-- Debug: Priority report of postID 171: Comments: 0 of 35 = 0 points -->
 	<url>
-		<loc>http://wordpress.com/rails/jon-mortimer/</loc>
+		<loc>http://wordpress.com/rails/instructors/jon-mortimer/</loc>
 		<lastmod>2013-08-19T17:30:53+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
-<!-- Debug: Priority report of postID 163: Comments: 0 of 31 = 0 points -->
+<!-- Debug: Priority report of postID 163: Comments: 0 of 35 = 0 points -->
 	<url>
-		<loc>http://wordpress.com/rails/john-horniblow/</loc>
+		<loc>http://wordpress.com/rails/instructors/john-horniblow/</loc>
 		<lastmod>2013-08-19T17:25:18+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
-<!-- Debug: Priority report of postID 157: Comments: 0 of 31 = 0 points -->
+<!-- Debug: Priority report of postID 157: Comments: 0 of 35 = 0 points -->
 	<url>
-		<loc>http://wordpress.com/rails/kara-fox/</loc>
+		<loc>http://wordpress.com/rails/instructors/kara-fox/</loc>
 		<lastmod>2013-08-19T17:23:30+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
-<!-- Debug: Priority report of postID 153: Comments: 0 of 31 = 0 points -->
+<!-- Debug: Priority report of postID 153: Comments: 0 of 35 = 0 points -->
 	<url>
-		<loc>http://wordpress.com/rails/jonathan-castner/</loc>
+		<loc>http://wordpress.com/rails/instructors/jonathan-castner/</loc>
 		<lastmod>2013-08-19T17:22:32+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
-<!-- Debug: Priority report of postID 149: Comments: 0 of 31 = 0 points -->
+<!-- Debug: Priority report of postID 149: Comments: 0 of 35 = 0 points -->
 	<url>
-		<loc>http://wordpress.com/rails/david-bathgate/</loc>
+		<loc>http://wordpress.com/rails/instructors/david-bathgate/</loc>
 		<lastmod>2013-08-19T17:20:00+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
-<!-- Debug: Priority report of postID 147: Comments: 0 of 31 = 0 points -->
+<!-- Debug: Priority report of postID 147: Comments: 0 of 35 = 0 points -->
 	<url>
-		<loc>http://wordpress.com/rails/memphis-barbree/</loc>
+		<loc>http://wordpress.com/rails/instructors/memphis-barbree/</loc>
 		<lastmod>2013-08-19T17:19:08+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
-<!-- Debug: Priority report of postID 145: Comments: 0 of 31 = 0 points -->
+<!-- Debug: Priority report of postID 145: Comments: 0 of 35 = 0 points -->
 	<url>
-		<loc>http://wordpress.com/rails/daniel-bailey/</loc>
+		<loc>http://wordpress.com/rails/instructors/daniel-bailey/</loc>
 		<lastmod>2013-08-19T17:18:38+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
@@ -344,16 +427,16 @@
 		<changefreq>weekly</changefreq>
 		<priority>0.6</priority>
 	</url>
-<!-- Debug: Priority report of postID 111: Comments: 0 of 31 = 0 points -->
+<!-- Debug: Priority report of postID 111: Comments: 0 of 35 = 0 points -->
 	<url>
-		<loc>http://wordpress.com/rails/lorem-ipsum-dolor-sit-amet/</loc>
+		<loc>http://wordpress.com/rails/uncategorized/lorem-ipsum-dolor-sit-amet/</loc>
 		<lastmod>2013-08-18T17:31:00+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
-<!-- Debug: Priority report of postID 108: Comments: 1 of 31 = 0 points -->
+<!-- Debug: Priority report of postID 108: Comments: 1 of 35 = 0 points -->
 	<url>
-		<loc>http://wordpress.com/rails/infographic-the-internet-war-report-2013-social-media-os-browser-leaders/</loc>
+		<loc>http://wordpress.com/rails/blog/infographic-the-internet-war-report-2013-social-media-os-browser-leaders/</loc>
 		<lastmod>2013-08-18T15:42:01+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
@@ -371,37 +454,13 @@
 		<priority>0.6</priority>
 	</url>
 	<url>
-		<loc>http://wordpress.com/rails/cart/</loc>
-		<lastmod>2013-08-09T17:11:36+00:00</lastmod>
-		<changefreq>weekly</changefreq>
-		<priority>0.6</priority>
-	</url>
-	<url>
 		<loc>http://wordpress.com/rails/checkout/</loc>
 		<lastmod>2013-08-09T17:11:36+00:00</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
-		<loc>http://wordpress.com/rails/checkout/order-received/</loc>
-		<lastmod>2013-08-09T17:11:36+00:00</lastmod>
-		<changefreq>weekly</changefreq>
-		<priority>0.6</priority>
-	</url>
-	<url>
 		<loc>http://wordpress.com/rails/my-account/</loc>
-		<lastmod>2013-08-09T17:11:36+00:00</lastmod>
-		<changefreq>weekly</changefreq>
-		<priority>0.6</priority>
-	</url>
-	<url>
-		<loc>http://wordpress.com/rails/my-account/change-password/</loc>
-		<lastmod>2013-08-09T17:11:36+00:00</lastmod>
-		<changefreq>weekly</changefreq>
-		<priority>0.6</priority>
-	</url>
-	<url>
-		<loc>http://wordpress.com/rails/my-account/logout/</loc>
 		<lastmod>2013-08-09T17:11:36+00:00</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.6</priority>
@@ -419,13 +478,37 @@
 		<priority>0.6</priority>
 	</url>
 	<url>
+		<loc>http://wordpress.com/rails/my-account/view-order/</loc>
+		<lastmod>2013-08-09T17:11:36+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://wordpress.com/rails/my-account/change-password/</loc>
+		<lastmod>2013-08-09T17:11:36+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://wordpress.com/rails/my-account/logout/</loc>
+		<lastmod>2013-08-09T17:11:36+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://wordpress.com/rails/checkout/order-received/</loc>
+		<lastmod>2013-08-09T17:11:36+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
 		<loc>http://wordpress.com/rails/checkout/pay/</loc>
 		<lastmod>2013-08-09T17:11:36+00:00</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.6</priority>
 	</url>
 	<url>
-		<loc>http://wordpress.com/rails/my-account/view-order/</loc>
+		<loc>http://wordpress.com/rails/cart/</loc>
 		<lastmod>2013-08-09T17:11:36+00:00</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.6</priority>

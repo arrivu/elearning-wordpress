@@ -40,7 +40,7 @@ elseif($count=="4")
 
 <div style="float: left;vertical-align: bottom;width: 100%;height: 35%;margin-top: 65px; background-color: black;
 opacity: 0.6;"  >
-    <a style="<?php echo $style; ?>" href="<?php echo bloginfo('url'); ?>/?post_type=product">
+    <a style="<?php echo $style; ?>" href="<?php echo bloginfo('url'); ?>/courses/?add-to-cart=<?php echo $post->ID; ?>">
 <div style="text-overflow:ellipsis;white-space:nowrap;width:12em;overflow:hidden; ">
 <?php the_title(); ?></div></a>
 </div>    
@@ -87,12 +87,12 @@ elseif($count=="4")
 
 <div style="float: left;vertical-align: bottom;width: 100%;height: 35%;margin-top: 65px; background-color: black;
 opacity: 0.6;"  >
-    <a style="<?php echo $style; ?>" href="<?php echo bloginfo('url'); ?>/?post_type=product">
+    <a style="<?php echo $style; ?>" href="<?php echo bloginfo('url'); ?>/courses/?add-to-cart=<?php echo $post->ID; ?>">
 <div style="text-overflow:ellipsis;white-space:nowrap;width:12em;overflow:hidden; ">
 <?php the_title(); ?>
 </div>
 </a>
-</div>    <?php /*?>		
+</div>    <?php /*?>        
 <a href="<?php echo bloginfo('url'); ?>/programmes/#<?php the_title(); ?>" class="img_txt1">
 
 <a href="<?php echo bloginfo('url'); ?>/?post_type=product" class="img_txt1">
@@ -112,7 +112,7 @@ opacity: 0.6;"  >
 <div class="get_start_black">
 <div class="get_start_black_row">
 <?php   if ( function_exists(dynamic_sidebar('Free Lesson Section')) ) :
-            dynamic_sidebar('Free Lesson Section'); endif; ?>	
+            dynamic_sidebar('Free Lesson Section'); endif; ?>   
 </div>
 </div>
 <?php // endif; ?>
@@ -136,38 +136,38 @@ $users = array();
 $ct=0;
 foreach($allUsers as $currentUser)
 {
-	if(in_array( 'author', $currentUser->roles ))
-	{
-		//echo $currentUser->ID;
-		$all_meta_for_user = get_user_meta($currentUser->ID);
-		//echo $all_meta_for_user['jsIs_user_featured'][0];
-		
-		if($all_meta_for_user['jsIs_user_featured'][0]=="yes")
-		{
-			if($ct<=5)
-			{
-			$users[] = $currentUser;
-			}
-			$ct++;
-		}
-	}
+    if(in_array( 'author', $currentUser->roles ))
+    {
+        //echo $currentUser->ID;
+        $all_meta_for_user = get_user_meta($currentUser->ID);
+        //echo $all_meta_for_user['jsIs_user_featured'][0];
+        
+        if($all_meta_for_user['jsIs_user_featured'][0]=="yes")
+        {
+            if($ct<=5)
+            {
+            $users[] = $currentUser;
+            }
+            $ct++;
+        }
+    }
 }
 //print_r($users);
 
 ?>
 
 <ul class="instructor_list" id="imgInstructor">
-	<?php foreach($users as $user)
-		{
-			$string_site = get_site_url(); ?>
+    <?php foreach($users as $user)
+        {
+            $string_site = get_site_url(); ?>
 <li>   
-			<a href="<?php echo $string_site."/instructors/?user=".$user->ID; ?>" title="<?php echo $user->display_name; ?>" style="text-decoration: none;color:#999"><?php echo get_avatar( $user->user_email); ?></a>
-			      <h2><div style="text-overflow:ellipsis;white-space:nowrap;width:8em;overflow:hidden; "><?php echo $user->display_name; ?></div></h2>
+            <a href="<?php echo $string_site."/instructors/?user=".$user->ID; ?>" title="<?php echo $user->display_name; ?>" style="text-decoration: none;color:#999"><?php echo get_avatar( $user->user_email); ?></a>
+                  <h2><div style="text-overflow:ellipsis;white-space:nowrap;width:8em;overflow:hidden; "><?php echo $user->display_name; ?></div></h2>
 </li>
 </li>
-			<?php
-		}
-	?>
+            <?php
+        }
+    ?>
 </ul>
 
  <br/><br/><br/>
@@ -228,14 +228,14 @@ if ($featured->have_posts()):
 <br/><br/><br/><br/><br/><br/><br/>
 <?php */?>
 
-<?php  	
+<?php   
 
-		if ( function_exists(dynamic_sidebar('Featured Instructors Section')) ) :
+        if ( function_exists(dynamic_sidebar('Featured Instructors Section')) ) :
             dynamic_sidebar('Featured Instructors Section');
-             endif; ?>	
+             endif; ?>  
 <?php   if ( function_exists(dynamic_sidebar('Featured Instructors Bottom')) ) :
             dynamic_sidebar('Featured Instructors Bottom');
-             endif; ?>	
+             endif; ?>  
 
 </div>
 </div>
@@ -273,7 +273,7 @@ if ($featured->have_posts()):
 <div class="row_inner">
 <p class="title_red_small">Testimonials</p>
 <?php   if ( function_exists(dynamic_sidebar('Testimonials')) ) :
-            dynamic_sidebar('Testimonials'); endif; ?>	
+            dynamic_sidebar('Testimonials'); endif; ?>  
 </div>
 </div>
-<?php get_footer(); ?>			
+<?php get_footer(); ?>          

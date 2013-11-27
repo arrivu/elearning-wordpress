@@ -1,0 +1,108 @@
+
+<link id="cf7-map-field-leaflet-css" rel="stylesheet" href="http://wordpress.com/rails/wp-content/plugins/contact-form-7-map-field/leaflet.css" />
+<!--[if lte IE 8]>
+<link id="cf7-map-field-leaflet-ie-css" rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.4/leaflet.ie.css" />
+<![endif]-->
+<script id="cf7-map-field-leaflet-js" src="http://wordpress.com/rails/wp-content/plugins/contact-form-7-map-field/leaflet.js"></script>
+<div style="position:relative">
+   <div id="CF7MapFieldDiv" style="height:300px;width:100%"></div>
+   <span style="position:absolute;right:0px;bottom:20px;font: 12px Arial,Helvetica,sans-serif;background-color: rgba(255, 255, 255, 0.698);padding:2px 7px;z-index: 1000;" >
+		Marker at: <span id="CF7MapMarkerAt">none</span>
+	</span>
+</div>
+<div id="CF7MapGeolocationDiv">
+    <a href="javascript:void(0)" onclick="onFindMeClick()">find my location</a>
+	<span onmouseout="GeolocationHelpOut()" onmouseover="GeolocationHelpOver()" style="cursor:help;font-size:70%; vertical-align:top;font-weight:bold;position:relative">
+		?
+		<span id="CF7MapGeolocationHelp" style="visibility:hidden;border:1px solid gray;font: 12px Arial,Helvetica,sans-serif;position:absolute;bottom:15px;left:-10px;width:300px;background-color:rgba(255, 255, 255, 0.698);padding:7px;z-index:1000">
+			By using geolocation I'll try to take you closer to your real-world geographic location, it is not always accurate, and no promise it will work. The browser will ask for your permission so you'll have to accept it.
+		</span>
+	</span>
+	&nbsp;&nbsp;
+	<span id="CF7MapGeoLocationInfo"></span>
+</div>
+<script>
+var map;
+var marker;
+var geolocationCirc;
+function GeolocationHelpOver() {
+	document.getElementById('CF7MapGeolocationHelp').style.visibility = "visible";
+}
+function GeolocationHelpOut() {
+	document.getElementById('CF7MapGeolocationHelp').style.visibility = "hidden";
+}
+function updateMarkerPosition(e) {
+    var markerLatLang = [e.lat.toFixed(6), e.lng.toFixed(6)].join(',');
+    document.getElementById('CF7MapMarkerAt').innerHTML = markerLatLang;
+    var hidd = document.getElementById('CF7MapLocationHidden');
+    var val = [map.getZoom(), markerLatLang].join(';');
+    if (!!hidd) { hidd.value = val; }
+}
+function removeGeoLocationCirc() {
+    document.getElementById('CF7MapGeoLocationInfo').innerHTML = "";
+    if (!!geolocationCirc) {map.removeLayer(geolocationCirc); }
+}
+function onLocationFound(e) {
+    document.getElementById('CF7MapGeoLocationInfo').innerHTML = "You are somewhere around here";
+    map.setView(new L.LatLng(e.latlng.lat, e.latlng.lng), 8);
+    var radius = e.accuracy / 2;
+    geolocationCirc = L.circle(e.latlng, radius, {weight: 1, clickable: false});
+    map.addLayer(geolocationCirc);
+    marker.setLatLng([e.latlng.lat, e.latlng.lng]);
+    updateMarkerPosition(marker.getLatLng());
+}
+function onLocationError(e) {
+    document.getElementById('CF7MapGeoLocationInfo').innerHTML = "Could not determine your location";
+}
+function onMarkerDrag(e) {
+    removeGeoLocationCirc();
+    updateMarkerPosition(marker.getLatLng());
+}
+function onMapClick(e) {
+	if (marker === undefined) {
+		var markerIcon = L.icon({
+			iconUrl: 'https://cdn.leafletjs.com/leaflet-0.4.4/images/marker-icon.png',
+			shadowUrl: 'https://cdn.leafletjs.com/leaflet-0.4.4/images/marker-shadow.png',
+			iconSize: [25, 41],
+			iconAnchor: [13, 41],
+			shadowSize: [41, 41],
+			shadowAnchor: [15, 41]
+		});
+		marker = L.marker(e.latlng, {
+			icon: markerIcon,
+			draggable: true
+		}).addTo(map);
+		marker.on('drag', onMarkerDrag);
+	} else {
+		marker.setLatLng([e.latlng.lat, e.latlng.lng]);
+	}
+    removeGeoLocationCirc();
+    updateMarkerPosition(e.latlng);
+}
+function initmap() {
+    // set up the map
+    map = new L.Map('CF7MapFieldDiv');
+    // create the tile layer with correct attribution
+    var mapUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+    var mapAttrib = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>';
+    var mapTile = new L.TileLayer(mapUrl, {
+        minZoom: 2,
+        maxZoom: 18,
+        attribution: mapAttrib
+    });
+    map.addLayer(mapTile);
+    // set default view (London)
+    map.setView(new L.LatLng(51.501, -0.105), 8);
+    // add events
+    map.on('click', onMapClick);
+	map.on('locationerror', onLocationError);
+	map.on('locationfound', onLocationFound);
+}
+function onFindMeClick() {
+    // geo locate
+    removeGeoLocationCirc();
+    document.getElementById('CF7MapGeoLocationInfo').innerHTML = "Searching...";
+    map.locate();
+}
+initmap();
+</script>

@@ -526,7 +526,7 @@ function ebd_process_email_form( $cf7 ) {
         $innerHtml .= $link .   '<br />';
        }
        else
-         $innerHtml .= '<a class="icon-button download-icon" target="' . $target . '" href="' . $url .'"><span class="et-icon"><span>' . addslashes( $dl_item->title ). '</span></span></a><br />' ;
+         $innerHtml .= '<a class="icon-button download-icon" target="' . $target . '" href="' . $url .'"><span class="et-icon"><span style="background-color:#d03423;color:white;width:200px;height:23px;text-align:center;">' . addslashes( $dl_item->title ). '</span></span></a><br />' ;
 
 //       if(get_option('email_before_download_send_email') == 'Send Email' || get_option('email_before_download_send_email') == 'Both'){
 //       }
@@ -576,7 +576,7 @@ function ebd_process_email_form( $cf7 ) {
       }
       else {
         $url = WP_PLUGIN_URL."/email-before-download/download.php?dl=".$uid;
-        $innerHtml = '<a class="icon-button download-icon" target="' . $target . '" href="' . $url .'"><span class="et-icon"><span>' . addslashes($title) . '</span></span></a><br />' ;
+        $innerHtml = '<a class="icon-button download-icon" target="' . $target . '" href="' . $url .'"><span class="et-icon"><span style="background-color:#d03423;color:white;width:200px;height:23px;text-align:center;">' . addslashes($title) . '</span></span></a><br />' ;
      }
    }
    //nothing is selected for the download

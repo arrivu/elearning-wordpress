@@ -139,9 +139,15 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 <?php */ ?>
 
 
+<?php if ($woocommerce->cart->needs_payment()){
+	
+	$styleq='id="payment"';
+}
+else{
+	$styleq="";
+} ?>
 
-
-	<div id="payment">
+	<div <?php echo $styleq; ?> >
 		
 		<div class="form place-order">
 

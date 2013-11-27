@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 global $woocommerce;
 ?>
-
+<?php if ($woocommerce->cart->needs_payment()) : ?>
 <?php if ( $woocommerce->cart->ship_to_billing_address_only() && $woocommerce->cart->needs_shipping() ) : ?>
 
 
@@ -32,4 +32,4 @@ global $woocommerce;
 <?php do_action('woocommerce_after_checkout_billing_form', $checkout ); ?>
 
 
-
+<?php endif; ?>

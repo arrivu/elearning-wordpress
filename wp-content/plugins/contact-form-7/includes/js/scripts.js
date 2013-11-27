@@ -45,7 +45,7 @@
 							$(data.into).find(n.into).find('.wpcf7-form-control').addClass('wpcf7-not-valid');
 						});
 
-						ro.addClass('wpcf7-validation-errors');
+						//ro.addClass('wpcf7-validation-errors');
 						$(data.into).find('form.wpcf7-form').addClass('invalid');
 
 						$(data.into).trigger('invalid.wpcf7');
@@ -205,10 +205,12 @@
 	$.fn.wpcf7NotValidTip = function(message) {
 		return this.each(function() {
 			var into = $(this);
+			/*
 			into.append('<span class="wpcf7-not-valid-tip">' + message + '</span>');
 			$('span.wpcf7-not-valid-tip').mouseover(function() {
 				$(this).fadeOut('fast');
 			});
+			*/
 			into.find(':input').mouseover(function() {
 				into.find('.wpcf7-not-valid-tip').not(':hidden').fadeOut('fast');
 			});
