@@ -248,7 +248,8 @@ table.wpuf-table td {
 }
 
 .invalid {
-    border: 1px solid #FF7272 !important;
+    /* border: 1px solid #FF7272 !important;
+    */
 }
 
 

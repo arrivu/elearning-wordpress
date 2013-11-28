@@ -13,6 +13,8 @@
 				beforeSubmit: function(formData, jqForm, options) {
 					jqForm.wpcf7ClearResponseOutput();
 					jqForm.find('img.ajax-loader').css({ visibility: 'visible' });
+					jqForm.find('.wpcf7-submit').attr("disabled", true);
+					//jqForm.find('img#wp-auth-check-bg').css({ visibility: 'visible' });
 					return true;
 				},
 				beforeSerialize: function(jqForm, options) {
@@ -272,6 +274,7 @@
 			$(this).find('div.wpcf7-response-output').hide().empty().removeClass('wpcf7-mail-sent-ok wpcf7-mail-sent-ng wpcf7-validation-errors wpcf7-spam-blocked');
 			$(this).find('span.wpcf7-not-valid-tip').remove();
 			$(this).find('img.ajax-loader').css({ visibility: 'hidden' });
+			$(this).find('.wpcf7-submit').attr("disabled", false);
 		});
 	};
 

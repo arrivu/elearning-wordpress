@@ -79,7 +79,7 @@ if ( $customer_orders ) : ?>
 
 				$getlms=$wpdb->get_row($get_lmsid);
 				$canvas_url= $course_url.'/courses/'.$getlms->lms_id .'/modules';
-				echo '<h3>' .$item['name'].'</h3>';
+				echo '<h3 style="color:#d03423">' .$item['name'].'</h3>';
 					
 					
 					//$re1="select * from wp_postmeta where meta_key ='_wp_attached_file' and post_id=".$item['product_id'];
@@ -91,6 +91,8 @@ if ( $customer_orders ) : ?>
 					$getpost_content=$wpdb->get_row($get_post_content);	
 					echo "<br/>".$getpost_content->post_content;
 					?>
+					<br/>
+					<br/>
 					<a href="<?php echo $canvas_url; ?>"  rel="nofollow" class="red_txt_normal button product_type_simple">Take This Course</a>
 					<?php
 

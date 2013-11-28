@@ -1883,7 +1883,7 @@ padding: 0 56px;
 .bookdet{
 	margin: 25px auto ;
 	width:820px;
-	height:251px;
+	height:265px;
 	background:#b2b2b2;
 	border-radius:5px;
 	-moz-border-radius:5px;
@@ -1910,7 +1910,7 @@ padding: 0 56px;
 .bookdet span{
 	display:block;
 	font:normal 12px Arial, Helvetica, sans-serif;
-	color:#000;
+	color:black;
 	padding:7px 0 0 0;
 }
 .bookdet span.big{
